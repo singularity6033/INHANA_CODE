@@ -33,10 +33,6 @@
     "pages/grading_index/grading_index",
     "pages/grading_test_home/grading_test_home",
     "pages/grading_test_register/grading_test_register",
-<<<<<<< HEAD
-=======
-    "pages/grading_test_detail/grading_test_detail",
->>>>>>> master
     "pages/grading_train_home/grading_train_home",
     "pages/grading_train_content/grading_train_content",
     "pages/pay_record/pay_record",

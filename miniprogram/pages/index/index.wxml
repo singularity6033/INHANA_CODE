@@ -68,7 +68,6 @@
     </view>
   </navigator>
 
-<<<<<<< HEAD
   <view class="cu-card case" wx:for="{{offlineLectureList}}" wx:key="index">
     <view class="cu-item shadow" bindtap="ShowDataOne" data-index="{{index}}">
       <view class="image">
@@ -76,31 +75,15 @@
       <view class="cu-tag bg-blue">最新</view>
       <view class="cu-bar bg-shadeBottom">
         <text class="text-cut text-lg">{{item.title}}</text>
-=======
-  <view class="cu-card case" wx:for="{{3}}">
-    <view class="cu-item shadow">
-      <view class="image">
-        <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="widthFix"></image>
-      <view class="cu-tag bg-blue">史诗</view>
-      <view class="cu-bar bg-shadeBottom">
-        <text class="text-cut">我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。</text>
->>>>>>> master
       </view>
     </view>
     <view class="cu-list menu-avatar">
       <view class="cu-item">
         <view class="flex-sub padding">
-<<<<<<< HEAD
           <view class="text-blue text-bold text-shadow text-lg padding-bottom-xs">点击查看详情</view>
           <view class="text-gray text-lg flex justify-between">
             发布于{{common.timesFun(item.posttime)}}前
             <view class="text-red text-price text-lg">{{item.price}}</view>
-=======
-          <view class="text-grey">正义天使 凯尔</view>
-          <view class="text-gray text-sm flex justify-between">
-            十天前
-            <view class="text-red text-price text-lg">198</view>
->>>>>>> master
           </view>
         </view>
       </view>

@@ -19,11 +19,7 @@ Page({
   ShowDataOne(e){
     if(app.globalData.userInfo){
       var index = e.currentTarget.dataset.index;
-<<<<<<< HEAD
       wx.setStorageSync('itemOne', this.data.GradingInfoList[index])
-=======
-      wx.setStorageSync('itemOne', this.data.newsList[index])
->>>>>>> master
       wx.setStorageSync('itemType', "grading_test")
       wx.navigateTo({
         url: '../item_detail/item_detail'

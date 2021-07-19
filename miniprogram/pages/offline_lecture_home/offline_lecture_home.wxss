@@ -18,22 +18,12 @@ page{
 }
 .idxCon .row .rowTxt .title {
   font-size: 32rpx;
-<<<<<<< HEAD
   margin-left: 20rpx;
   height: 80rpx;
 }
 .idxCon .row .rowTxt .info {
   font-size: 28rpx;
   margin-left: 20rpx;
-=======
-  margin-bottom:20rpx;
-  margin-left:20rpx;
-  height: 100rpx;
-}
-.idxCon .row .rowTxt .info {
-  font-size: 28rpx;
-  margin-left:20rpx;
->>>>>>> master
   columns: #999999;
 }
 .idxCon .row .rowPic {

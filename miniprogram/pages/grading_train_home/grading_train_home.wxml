@@ -12,7 +12,6 @@
   </view>
 </scroll-view>
 
-<<<<<<< HEAD
 <view class="imgGroup">
   <image class="img1" mode="widthFix" src="{{gradingTraining.cover_url}}"></image>
 </view>
@@ -46,25 +45,11 @@
       bindtap="ShowTrainingDetail">查看培训计划</view>
       <view class="info text-sm text-gray">
         已有{{common.getMyNum(item.num)}}人参与培训计划
-=======
-<view class="idxCon" wx:for="{{newsList}}" wx:key="index" >
-  <view class="row cu-bar bg-white margin-top-sm" bindtap="ShowDataOne" data-index="{{index}}">
-    <view class="rowTxt">
-      <view class="title text-black text-bold text-left">{{item.title}}</view>
-      <view class="info text-bold text-red margin-bottom-xs text-shadow text-price text-left" wx:if="{{false}}">{{item.price}}</view>
-      <view class="info text-bold text-green margin-bottom-xs text-shadow text-left" wx:if="{{true}}">查看培训计划</view>
-      <view class="info text-sm text-gray">
-        已有{{common.getMyNum(item.grading_number)}}人参与培训计划
->>>>>>> master
       </view>
       </view>
       <view class="rowPic">
         <image mode="aspectFit" src="{{item.cover_url}}" class="img"></image>
-<<<<<<< HEAD
         <image mode="aspectFit" src="{{isPay[index]?'../../images/lock_on.png':'../../images/lock_off.png'}}" class="img1"></image>
-=======
-        <image mode="aspectFit" src="../../images/lock_off.png" class="img1"></image>
->>>>>>> master
       </view>
     </view> 
 </view>

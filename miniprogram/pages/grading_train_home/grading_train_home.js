@@ -1,5 +1,4 @@
 const app = getApp();
-<<<<<<< HEAD
 var isPay = []
 var Openid= ''
 Page({
@@ -12,17 +11,6 @@ Page({
     gradingTrainingLecture: [],
     gradingTraining: {},
     isPay: []
-=======
-Page({
-
-  data: {
-    swiperList:[],
-    TabTitle:["公共演讲","诗歌散文朗诵","戏剧独白表演","阅读表演"],
-    TabTitle_En:["Public Speaking","Speaking Verse and Prose","Acting(Solo)","Reading for Performance"],
-    TabCur: 0,
-    scrollLeft:0,
-    newsList:[]
->>>>>>> master
   },
 
   cardSwiper(e) {
@@ -32,7 +20,6 @@ Page({
     })
   },
 
-<<<<<<< HEAD
   tabSelect(e) {
     this.setData({
       TabCur: e.currentTarget.dataset.id,
@@ -67,14 +54,6 @@ Page({
       wx.setStorageSync('itemType', "grading_training")
       wx.navigateTo({
         url: '../item_detail/item_detail'
-=======
-  ShowDataOne(e){
-    if(app.globalData.userInfo){
-      var index = e.currentTarget.dataset.index;
-      wx.setStorageSync('gradingOne', this.data.newsList[index])
-      wx.navigateTo({
-        url: '../grading_test/grading_test'
->>>>>>> master
       })
     }else{
       wx.showToast({
@@ -91,7 +70,6 @@ Page({
     }
   },
 
-<<<<<<< HEAD
   getGrading(Class="公共演讲"){
     wx.showLoading()
     wx.cloud.callFunction({
@@ -103,20 +81,11 @@ Page({
       })
       wx.hideLoading()
     })
-=======
-  tabSelect(e) {
-    this.setData({
-      TabCur: e.currentTarget.dataset.id,
-      scrollLeft: (e.currentTarget.dataset.id-1)*60,
-    })
-    this.getGradingData(e.currentTarget.dataset.item)
->>>>>>> master
   },
 
   getGradingData(Class="公共演讲"){
     wx.showLoading()
     wx.cloud.callFunction({
-<<<<<<< HEAD
       name: "get_grading_training_lecture_info",
       data: {Class}
     }).then(res=>{
@@ -135,19 +104,11 @@ Page({
       }, 100)
       this.setData({
         gradingTrainingLecture: res.result.data
-=======
-      name: "get_grading_info",
-      data: {Class}
-    }).then(res=>{
-      this.setData({
-        newsList:res.result.data
->>>>>>> master
       })
       wx.hideLoading()
     })
   },
 
-<<<<<<< HEAD
   preview_swiper_img(e){
     var cur = e.target.dataset.src;//获取本地一张图片链接
     console.log(e)
@@ -159,9 +120,6 @@ Page({
 
   onLoad: function (options) {
     this.getGrading();
-=======
-  onLoad: function (options) {
->>>>>>> master
     this.getGradingData();
   },
 

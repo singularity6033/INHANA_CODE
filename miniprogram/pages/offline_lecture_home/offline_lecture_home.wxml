@@ -3,34 +3,16 @@
 </cu-custom>
 <wxs src="../../wxs/common.wxs" module="common"/>
 
-<<<<<<< HEAD
 <view class="idxCon" wx:for="{{offlineLectureList}}" wx:key="index" >
-=======
-<scroll-view scroll-x class="bg-white nav">
-  <view class="flex text-center">
-    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{TabTitle}}" wx:key="index" bindtap="tabSelect" data-id="{{index}}" data-item="{{TabTitle[index]}}">
-      <text>{{item}}
-      {{TabTitle_En[index]}}</text>
-    </view>
-  </view>
-</scroll-view>
-
-<view class="idxCon" wx:for="{{newsList}}" wx:key="index" >
->>>>>>> master
   <view class="row cu-bar bg-white margin-top-sm" bindtap="ShowDataOne" data-index="{{index}}">
     <view class="rowTxt">
       <view class="title text-black text-bold text-left">{{item.title}}</view>
       <view class="info text-bold text-red margin-bottom-xs text-shadow text-price text-left">{{item.price}}</view>
-<<<<<<< HEAD
         <view class="info text-shadow">
           已有{{common.getMyNum(item.num)}}人参与
         </view>
         <view class="info text-gray">
           发布于{{common.timesFun(item.posttime)}}前
-=======
-        <view class="info text-gray">
-          已有{{common.getMyNum(item.grading_number)}}人参与
->>>>>>> master
         </view>
       </view>
       <view class="rowPic">

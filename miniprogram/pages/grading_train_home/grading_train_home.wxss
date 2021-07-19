@@ -1,7 +1,6 @@
 page{
   background-color: white;
 }
-<<<<<<< HEAD
 
 .imgGroup {
   width: 100%;
@@ -17,8 +16,6 @@ page{
   margin-right: 260rpx;
 }
 
-=======
->>>>>>> master
 .idxCon {
   padding-right: 20rpx;
   padding-left: 20rpx;
