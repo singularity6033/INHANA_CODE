@@ -1,0 +1,70 @@
+<cu-custom bgColor="bg-gradual-pink" isBack='{{true}}'>
+  <view slot="content">LAMDA考级培训</view>
+</cu-custom>
+<wxs src="../../wxs/common.wxs" module="common"/>
+
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{TabTitle}}" wx:key="index" bindtap="tabSelect" data-id="{{index}}" data-item="{{TabTitle[index]}}">
+      <text>{{item}}
+      {{TabTitle_En[index]}}</text>
+    </view>
+  </view>
+</scroll-view>
+
+<<<<<<< HEAD
+<view class="imgGroup">
+  <image class="img1" mode="widthFix" src="{{gradingTraining.cover_url}}"></image>
+</view>
+
+<view class="cu-bar bg-white">
+	<view class="action">
+		<text class="text-lg text-orange text-bold">考级须知</text>
+	</view>
+</view>
+
+<view class="imgGroup">
+  <image class="img1" mode="widthFix" src="{{gradingTraining.detail_url}}"
+  data-src="{{gradingTraining.detail_url}}" bindtap="preview_swiper_img"></image>
+</view>
+
+<view class="cu-bar bg-white">
+	<view class="action">
+		<text class="text-lg text-orange text-bold">考核等级</text>
+	</view>
+</view>
+
+<view class="idxCon" wx:for="{{gradingTrainingLecture}}" wx:key="index" >
+  <view class="row cu-bar bg-white margin-top-sm">
+    <view class="rowTxt">
+      <view class="title text-black text-bold text-left">{{item.title}}</view>
+      <view class="info text-bar text-bold text-red margin-bottom-xs text-shadow text-price text-left" wx:if="{{!isPay[index]}}"
+      bindtap="ShowDataOne" data-index="{{index}}">{{item.price}}
+        <text decode class="text-green">&nbsp;&nbsp;&nbsp;>>>点击解锁</text>
+      </view>
+      <view class="info text-bold text-green margin-bottom-xs text-shadow text-left" wx:if="{{isPay[index]}}"
+      bindtap="ShowTrainingDetail">查看培训计划</view>
+      <view class="info text-sm text-gray">
+        已有{{common.getMyNum(item.num)}}人参与培训计划
+=======
+<view class="idxCon" wx:for="{{newsList}}" wx:key="index" >
+  <view class="row cu-bar bg-white margin-top-sm" bindtap="ShowDataOne" data-index="{{index}}">
+    <view class="rowTxt">
+      <view class="title text-black text-bold text-left">{{item.title}}</view>
+      <view class="info text-bold text-red margin-bottom-xs text-shadow text-price text-left" wx:if="{{false}}">{{item.price}}</view>
+      <view class="info text-bold text-green margin-bottom-xs text-shadow text-left" wx:if="{{true}}">查看培训计划</view>
+      <view class="info text-sm text-gray">
+        已有{{common.getMyNum(item.grading_number)}}人参与培训计划
+>>>>>>> master
+      </view>
+      </view>
+      <view class="rowPic">
+        <image mode="aspectFit" src="{{item.cover_url}}" class="img"></image>
+<<<<<<< HEAD
+        <image mode="aspectFit" src="{{isPay[index]?'../../images/lock_on.png':'../../images/lock_off.png'}}" class="img1"></image>
+=======
+        <image mode="aspectFit" src="../../images/lock_off.png" class="img1"></image>
+>>>>>>> master
+      </view>
+    </view> 
+</view>

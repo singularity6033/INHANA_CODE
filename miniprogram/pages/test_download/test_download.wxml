@@ -1,0 +1,19 @@
+<cu-custom bgColor="bg-gradual-pink" isBack='{{true}}'>
+  <view slot="content">INHANA英翰语言戏剧</view>
+</cu-custom>
+
+<view class="idxCon" wx:for="{{DownloadList}}" wx:key="index" wx:if="{{DownloadList.length!=0}}">
+    <view class="row cu-bar bg-white margin-top-sm" bindtap="download" data-index="{{index}}">
+        <view class="rowTxt">
+          <view class="title text-black text-bold text-left">{{item.title}}{{item.category}}{{index+1}}</view>
+          <view class="info text-bold text-red margin-bottom-xs text-shadow text-left">点击下载</view>
+        </view>
+        <view class="rowPic">
+          <image mode="aspectFit" src="{{item.pic_url}}" class="img"></image>
+        </view>
+  </view> 
+</view>
+
+<view class="solid-bottom text-lg text-center text-black text-bold bg-white light padding" wx:if="{{DownloadList.length==0}}">
+  资料尚未发布，请耐心等待
+</view>

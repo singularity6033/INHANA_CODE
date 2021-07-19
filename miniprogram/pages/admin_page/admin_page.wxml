@@ -1,0 +1,31 @@
+<DakaAdmin wx:if="{{PageCur=='DakaAdmin'}}"></DakaAdmin>
+<Data wx:if="{{PageCur=='Data'}}"></Data>
+<GradingAdmin wx:if="{{PageCur=='GradingAdmin'}}"></GradingAdmin>
+<TemplateInfo wx:if="{{PageCur=='TemplateInfo'}}"></TemplateInfo>
+
+<view class="cu-bar tabbar bg-white shadow foot">
+  <view class="action" bindtap="NavChange" data-cur="DakaAdmin">
+    <view class='cuIcon-cu-image'>
+      <image src="{{PageCur=='DakaAdmin'?'../../icon/index_h.png':'../../icon/index.png'}}"></image>
+    </view>
+    <view class="{{PageCur=='DakaAdmin'?'text-red':'text-black'}}">打卡记录</view>
+  </view>
+  <view class="action" bindtap="NavChange" data-cur="Data">
+    <view class='cuIcon-cu-image'>
+      <image src="{{PageCur=='Data'?'../../icon/detail_h.png':'../../icon/detail.png'}}"></image>
+    </view>
+    <view class="{{PageCur=='Data'?'text-red':'text-black'}}">观看记录</view>
+  </view>
+  <view class="action" bindtap="NavChange" data-cur="GradingAdmin">
+    <view class='cuIcon-cu-image'>
+      <image src="{{PageCur=='GradingAdmin'?'../../icon/mine_h.png':'../../icon/mine.png'}}"></image>
+    </view>
+    <view class="{{PageCur=='GradingAdmin'?'text-red':'text-black'}}">报名记录</view>
+  </view>
+  <view class="action" bindtap="NavChange" data-cur="TemplateInfo">
+    <view class='cuIcon-cu-image'>
+      <image src="{{PageCur=='TemplateInfo'?'../../icon/send_h.png':'../../icon/send.png'}}"></image>
+    </view>
+    <view class="{{PageCur=='TemplateInfo'?'text-red':'text-black'}}">发送消息</view>
+  </view>
+</view>

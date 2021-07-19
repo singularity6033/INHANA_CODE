@@ -1,0 +1,7 @@
+<cu-custom bgColor="bg-gradual-pink" isBack='{{true}}'>
+  <view slot="content">INHANA语言戏剧教育</view>
+</cu-custom>
+
+<view class="solid-bottom text-df text-center text-black text-bold bg-white light padding">
+  该课程学习资料将于开课前两天开放，请耐心等待！
+</view>

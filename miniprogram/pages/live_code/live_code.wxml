@@ -1,0 +1,18 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">INHANA英翰语言戏剧</view>
+</cu-custom>
+  
+  <view class="solid-top text-lg text-center text-bold bg-white padding-xl">
+    <text class="text-lg text-shadow text-orange">点击下方图片-长按保存-使用微信扫一扫进入</text>
+    <view class="cuIcon-unfold"></view>
+  </view>
+
+  <view wx:for="{{live_code}}">
+    <view class="solid-bottom text-lg text-left text-bold bg-white light padding">
+      {{item.name}}
+    </view>   
+    <view class="imgGroup">
+      <image class="img1" mode="widthFix" src="{{item.pic_url}}" data-src="{{item.pic_url}}" bindtap="preview_swiper_img"></image>
+    </view>
+  </view>
+  

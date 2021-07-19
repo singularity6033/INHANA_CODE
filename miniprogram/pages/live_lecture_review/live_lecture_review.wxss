@@ -1,0 +1,51 @@
+.videoView {
+  position: relative;
+  margin: 20rpx 20rpx 30rpx;
+}
+ 
+.video {
+  width: 100%;
+  height: 420rpx;
+  border-radius: 40rpx;
+  box-shadow: 2px 3px 10px #6b6b6b;
+}
+
+.imgGroup {
+  width: 100%;
+}
+.imgGroup .img1 {
+  height:100%;
+  width:100%;
+  padding-right: 20rpx;
+  padding-left: 20rpx;
+  margin: auto;
+  display: block;
+}
+
+.view_fengexian {
+  width: 96%;
+  height: 50rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+/* 两个view的样式 */
+.view_fengexian view {
+  width: 50%;
+  height: 2rpx;
+  background: linear-gradient(to right, #ead6ee, #a0f1ea);
+}
+
+/* 字体的样式 */
+.text_fengexian {
+  font-size: 25rpx;
+  color: rgb(253, 143, 143);
+  margin: 0rpx 2% 0rpx 2%;
+}
+
+page{
+  background-color: white;
+}

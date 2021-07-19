@@ -1,0 +1,10 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">INHANA英翰语言戏剧</view>
+</cu-custom>
+
+<view>商户单号：{{payorder_grading.OrderCode}}</view>
+<view>购买课程：{{payorder_grading.item_name}}</view>
+<view>应支付：￥{{payorder_grading.item_price}}</view>
+<button bindtap="handleOrderPay" type="primary" >
+  支付
+</button>

@@ -1,0 +1,54 @@
+<FrontPage wx:if="{{PageCur=='FrontPage'}}"></FrontPage>
+<<<<<<< HEAD
+<!-- <Daka wx:if="{{PageCur=='Daka'}}"></Daka> -->
+=======
+<Daka wx:if="{{PageCur=='Daka'}}"></Daka>
+>>>>>>> master
+<News wx:if="{{PageCur=='News'}}"></News>
+<User wx:if="{{PageCur=='User'}}"></User>
+
+<view class="cu-bar tabbar bg-white shadow foot">
+  
+  <view class="action" bindtap="NavChange" data-cur="FrontPage">
+    <view class='cuIcon-cu-image'>
+      <image src="{{PageCur=='FrontPage'?'../../icon/index_h.png':'../../icon/index.png'}}"></image>
+    </view>
+    <view class="{{PageCur=='FrontPage'?'text-red':'text-black'}}">{{content.home}}</view>
+  </view>
+
+<<<<<<< HEAD
+  <!-- <view class="action" bindtap="NavChange" data-cur="Daka">
+=======
+  <view class="action" bindtap="NavChange" data-cur="Daka">
+>>>>>>> master
+    <view class='cuIcon-cu-image'>
+      <image src="{{PageCur=='Daka'?'../../icon/detail_h.png':'../../icon/detail.png'}}"></image>
+    </view>
+    <view class="{{PageCur=='Daka'?'text-red':'text-black'}}">{{content.learning_center}}</view>
+  </view> -->
+  
+  <view class="action" bindtap="NavChange" data-cur="News">
+    <view class='cuIcon-cu-image'>
+      <image src="{{PageCur=='News'?'../../icon/news_h.png':'../../icon/news.png'}}"></image>
+    </view>
+    <view class="{{PageCur=='News'?'text-red':'text-black'}}">资讯</view>
+  </view>
+<<<<<<< HEAD
+=======
+  
+  <view class="action" bindtap="NavChange" data-cur="News">
+    <view class='cuIcon-cu-image'>
+      <image src="{{PageCur=='News'?'../../icon/news_h.png':'../../icon/news.png'}}"></image>
+    </view>
+    <view class="{{PageCur=='News'?'text-red':'text-black'}}">资讯</view>
+  </view>
+>>>>>>> master
+
+  <view class="action" bindtap="NavChange" data-cur="User">
+    <view class='cuIcon-cu-image'>
+      <image src="{{PageCur=='User'?'../../icon/mine_h.png':'../../icon/mine.png'}}"></image>
+    </view>
+    <view class="{{PageCur=='User'?'text-red':'text-black'}}">{{content.user}}</view>
+  </view>
+
+</view> 

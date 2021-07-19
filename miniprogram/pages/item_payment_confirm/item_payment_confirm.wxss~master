@@ -1,0 +1,31 @@
+.idxCon {
+  padding: 40rpx 20rpx;
+}
+.idxCon .row {
+  display: flex;
+  border-bottom: 1px solid #eeeeee;
+  line-height: 300%;
+  padding: 20rpx 0;
+  height: 50%;
+  justify-content: space-between;
+}
+.idxCon .row .rowTxt { 
+  height: 100%;
+  width: 100%;
+}
+.idxCon .row .rowTxt .title {
+  font-size: 32rpx;
+  margin-bottom:20rpx;
+  margin-left:20rpx;
+  height: 100rpx;
+}
+.idxCon .row .rowTxt .info {
+  font-size: 28rpx;
+  margin-left: 10rpx;
+  columns: #999999;
+}
+.btn{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

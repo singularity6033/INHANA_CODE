@@ -1,0 +1,48 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">INHANA英翰语言戏剧</view>
+</cu-custom>
+
+<view class="padding text-center">
+  <view class="padding-xl radius text-lg text-bold shadow bg-blue margin-top">{{content.edit}}</view>
+</view>
+
+<view class='padding'>
+  <form bindsubmit="onSubmit">	
+    <view class="cu-form-group margin-top">
+      <input bindinput="IptChanged" name="name" placeholder="{{content.name}}"></input>
+    </view>
+    <view class="cu-form-group">
+      <input bindinput="IptChanged" name="school" placeholder="{{content.school}}"></input>
+    </view>
+
+    <!-- picker -->
+    <view class="cu-form-group">
+      <picker mode="selector" range="{{gender}}" value="{{index1}}" bindchange="genderPicker">
+        <view class="picker">{{content.gender}}：{{gender[index1]}}</view>
+      </picker>
+    </view>
+    <view class="cu-form-group">
+      <picker mode="selector" range="{{grade}}" value="{{index2}}" bindchange="gradePicker">
+        <view class="picker">{{content.grade}}：{{grade[index2]}}</view>
+      </picker>
+    </view>
+
+    <view class="cu-form-group">
+      <input bindblur="IptPhone" name="phone" placeholder="{{content.phone}}"></input>
+      <view class="cu-capsule radius">
+        <view class='cu-tag bg-blue '>+86</view>
+        <view class="cu-tag line-blue">{{content.mainland_china}}</view>
+      </view>
+    </view>
+    <view class="cu-form-group">
+		  <input bindblur="IptSMS" placeholder="{{content.verification_code}}" name="input"></input>
+		  <button class='cu-btn text-xs sm bg-green shadow' bindtap="send_sms" disabled="{{VcodeShow}}">{{VcodeName}}</button>
+	  </view>
+
+    <!-- button -->
+    <view class="cu-bar btn-group">
+        <button class="cu-btn bg-green shadow-blur round" form-type="submit" disabled="{{btnShow}}" type="primary">{{content.confirm}}</button>
+        <button class="cu-btn Btn bg-green shadow-blur round" form-type="reset" type="primary" plain>{{content.reset}}</button>
+    </view>
+  </form>
+</view>

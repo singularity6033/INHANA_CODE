@@ -1,0 +1,83 @@
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
+  <view slot="content">答题记录</view>
+</cu-custom>
+
+<wxs src="../../wxs/common.wxs" module="common"/>
+
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{2}}" wx:key bindtap="tabSelect" data-id="{{index}}" wx:if="{{index==0}}">
+      选择题
+    </view>
+    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{2}}" wx:key bindtap="tabSelect" data-id="{{index}}" wx:if="{{index==1}}">
+      朗读练习
+    </view>
+  </view>
+</scroll-view>
+
+<view class="padding bg-white" wx:if="{{TabCur==0}}">
+  <view class="flex"
+    wx:for="{{choice_record_list}}"
+    wx:key="index">
+      <view class="flex-treble padding-xs margin-xs radius bg-gray">
+        <view class="solid-bottom text-df text-left text-bold bg-white light padding">
+          {{common.getStrLen(item.result_list[0].question.choice_name,18)}}
+        </view>
+        <view class="solid-bottom text-sm text-left bg-white light padding">
+          {{common.myDate(item.posttime,1)}}
+        </view>
+      </view>
+      <view class="flex-twice padding-xs margin-xs radius bg-gray">
+        <view class="solid-bottom text-df bg-green text-center bg-white light padding" bindtap="ReviewMistakes" data-index="{{index}}">
+          查看错题
+        </view>
+        <view class="solid-bottom text-df text-center bg-white light padding">
+          正确率{{item.score}}%
+        </view>
+      </view>
+	</view>
+</view>
+
+<view class="padding bg-white" wx:if="{{TabCur==1}}">
+  <view class="flex"
+    wx:for="{{audio_record_list}}"
+    wx:key="index">
+      <view class="flex-treble padding-xs margin-xs radius bg-gray">
+        <view class="solid-bottom text-df text-left text-bold bg-white light padding">
+          {{common.getStrLen(item.question_name,18)}}
+        </view>
+        <view class="solid-bottom text-sm text-left bg-white light padding">
+          {{common.myDate(item.posttime,1)}}
+        </view>
+      </view>
+      <view class="flex-twice padding-xs margin-xs radius bg-gray">
+        <view class="solid-bottom text-df bg-green text-center bg-white light padding" bindtap="ReviewAudio" data-index="{{index}}">
+          查看详情
+        </view>
+        <view class="solid-bottom text-df text-center bg-white light padding">
+          <text class="text-red text-bold">{{item.review}}</text>
+        </view>
+      </view>
+	</view>
+</view>
+
+<!-- 
+<view class="padding bg-white" wx:if="{{TabCur==1}}">
+  <view class="flex align-center"
+    wx:for="{{audio_record_list}}"
+    wx:key="index">
+      <view class="flex-treble padding-xs margin-xs radius bg-gray">
+        <view class="solid-bottom text-lg text-left text-bold bg-white light padding">
+          {{common.getStrLen(item.question_name,8)}}
+        </view>
+        <view class="solid-bottom text-df text-left bg-white light padding">
+          {{common.timesFun(item.posttime)}}
+        </view>
+      </view>
+      <view class="flex-twice padding-xs margin-xs radius">
+        <view class="solid-bottom text-df bg-green text-center bg-white light padding" bindtap="ReviewAudio" data-index="{{index}}">
+          查看点评
+        </view>
+      </view>
+	</view>
+</view> -->

@@ -1,0 +1,25 @@
+.img{
+  height:40rpx;
+  width:40rpx;
+  position:relative; 
+  top:8rpx
+}
+
+.imgGroup {
+  width: 100%;
+}
+.imgGroup .img1 {
+  height:60%;
+  width:60%;
+  padding:10rpx;
+  margin: auto;
+  display: block;
+}
+
+.choice_style{
+  line-height: 50rpx;
+}
+
+page{
+ background-color: white;
+}

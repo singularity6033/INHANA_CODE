@@ -1,0 +1,19 @@
+<wxs src="../../wxs/common.wxs" module="common"></wxs>
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
+  <view slot="content">INHANA英翰语言戏剧</view>
+</cu-custom>
+
+<view class="solid-bottom text-lg text-center text-bold bg-white light padding">
+  {{VideoSrc.name}}
+</view>
+<view class='videoView'>
+  <txv-video defn vid="{{VideoSrc.video_url}}" wx:if="{{VideoSrc.video_url}}" playerid="myVideo" class='video' auto-pause-if-navigate object-fit></txv-video>
+</view>
+<view class='aline'></view>
+
+<view class="zanBox" bindtap="pushZan">
+  <image class="img2" src="{{VideoSrc.zanShow?'../../images/like_h.png':'../../images/like.png'}}"></image>
+  <view class="num">
+    {{common.getMyNum(VideoSrc.zan)}}
+  </view>
+</view>

@@ -1,0 +1,29 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">INHANA英翰语言戏剧</view>
+</cu-custom>
+
+<view class="padding text-center">
+  <view class="padding-xl radius text-lg text-bold shadow bg-blue margin-top">消息模板编辑</view>
+</view>
+
+<view class='padding'>
+  <form bindsubmit="onSubmit">	
+    <view class="cu-form-group margin-top">
+      <input bindinput="IptChanged" name="title" placeholder="输入消息标题" maxlength="20"></input>
+    </view>
+    <view class="cu-form-group">
+      <input bindinput="IptChanged" name="author" placeholder="输入发布作者" maxlength="20"></input>
+    </view>
+
+    <view class="cu-form-group">
+      <textarea bindinput="IptChanged" name="body" placeholder="请输入消息内容" maxlength="20"></textarea> 
+    </view>
+    
+
+    <!-- button -->
+    <view class="cu-bar btn-group">
+        <button class="cu-btn bg-green shadow-blur round" form-type="submit" disabled="{{btnShow}}" type="primary">确认</button>
+        <button class="cu-btn Btn bg-green shadow-blur round" form-type="reset" type="primary" plain>重置</button>
+    </view>
+  </form>
+</view>

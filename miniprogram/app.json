@@ -1,0 +1,77 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/index/index",
+    "pages/news/news",
+    "pages/intro/intro",
+    "pages/live_lecture_review/live_lecture_review",
+    "pages/login_info/login_info",
+    "pages/user/user",
+    "pages/daka/daka",
+    "pages/daka_detail/daka_detail",
+    "pages/daka_record/daka_record",
+    "pages/daka_record_choice/daka_record_choice",
+    "pages/daka_record_audio/daka_record_audio",
+    "pages/daka_question_choicyye/daka_question_choice",
+    "pages/daka_question_audio/daka_question_audio",
+    "pages/question_audio_demo/question_audio_demo",
+    "pages/detail/detail",
+    "pages/video_list/video_list",
+    "pages/video_detail/video_detail",
+    "pages/pay/pay",
+    "pages/show/show",
+    "pages/webview/webview",
+    "pages/student_page/student_page",
+    "pages/admin_page/admin_page",
+    "pages/admin_daka_record/admin_daka_record",
+    "pages/test_download/test_download",
+    "pages/daka_blank/daka_blank",
+    "pages/admin_daka/admin_daka",
+    "pages/admin_data/admin_data",
+    "pages/admin_grading_record/admin_grading_record",
+    "pages/live_code/live_code",
+    "pages/grading_index/grading_index",
+    "pages/grading_test_home/grading_test_home",
+    "pages/grading_test_register/grading_test_register",
+<<<<<<< HEAD
+=======
+    "pages/grading_test_detail/grading_test_detail",
+>>>>>>> master
+    "pages/grading_train_home/grading_train_home",
+    "pages/grading_train_content/grading_train_content",
+    "pages/pay_record/pay_record",
+    "pages/admin_data_detail/admin_data_detail",
+    "pages/update_login_info/update_login_info",
+    "pages/lecture_pay/lecture_pay",
+    "pages/live_replay/live_replay",
+    "pages/template_info_send/template_info_send",
+    "pages/template_info_edit/template_info_edit",
+    "pages/offline_lecture_home/offline_lecture_home",
+    "pages/final_drama_showcase_review/final_drama_showcase_review",
+    "pages/item_detail/item_detail",
+    "pages/item_payment_confirm/item_payment_confirm"
+    ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "英翰语言戏剧教育",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "plugins": {
+    "WechatSI": {
+    "version":"0.3.4",
+    "provider":"wx069ba97219f66d99"
+    },
+    "tencentvideo": {
+      "version": "1.3.31",
+      "provider": "wxa75efa648b60994b"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">INHANA英翰语言戏剧</view>
+</cu-custom>
+
+
+<view wx:if="{{ChoiceMistakeList.length!=0}}">
+  <view class="solid-bottom text-lg text-left text-bold bg-white light padding">
+    错题记录
+  </view>
+  <view 
+    wx:for="{{ChoiceMistakeList}}"
+    wx:for-item="item1"
+    wx:key="index">
+    <view class="solid-bottom text-lg text-left text-bold bg-white light padding">{{index+1}}. {{item1.title}}</view>
+    <view class="imgGroup">
+      <image class="img1" mode="widthFix" src="{{item1.question_pic}}"></image>
+    </view>
+    <radio-group class="block"
+      wx:for="{{item1.options}}"
+      wx:for-item="item2"
+      wx:key="index">
+      <view class="cu-form-group">
+		  	<view class="title">{{item2.code}}. {{item2.content}}</view>
+			  <radio class='radio' value="item2" checked="{{item2.checked}}" disabled="{{true}}"></radio>
+		  </view>
+      <!-- <radio class="radio" checked="{{item2.checked}}" color="#FF0000">
+        {{item2.code}}. {{item2.content}}
+      </radio> -->
+    </radio-group>
+    <view class="solid-bottom text-lg text-red text-left text-bold bg-white light padding">
+      正确答案为：{{item1.answer}}
+    </view>
+  </view>
+</view>
+<view class="solid-bottom text-lg text-left text-bold bg-white light padding" wx:else>
+  你没有错题！！！
+</view>
+

@@ -1,0 +1,35 @@
+<cu-custom bgColor="bg-gradual-pink" isBack='{{true}}'>
+  <view slot="content">INHANA英翰语言戏剧</view>
+</cu-custom>
+<view class="cu-bar search bg-white">
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" bindinput="Iptchanged" placeholder="按学校名搜索" confirm-type="search"></input>
+  </view>
+</view>
+
+<view class="idxCon cu-form-group">
+  <view class="rowTxt">
+    <view class="info text-left">全选/取消</view>
+  </view>
+	<checkbox class="round" bindtap="SelectAll"></checkbox>
+</view>
+
+<checkbox-group bindchange="SendGroup">
+  <view class="idxCon cu-form-group" wx:for="{{UserInfoList}}" wx:key="index">
+    <view class="rowTxt">
+          <view class="info text-left">学校：{{item.school}}</view>
+          <view class="info text-left">姓名：{{item.name}}</view>
+          <view class="info text-left">性别：{{item.gender}}</view>
+          <view class="info text-left">年级：{{item.grade}}</view>
+          <view class="info text-left">联系方式：{{item.phone}}</view>
+      </view>
+	  <checkbox class="round" value="{{item.openid}}" checked="{{item.checked}}"></checkbox>
+  </view>
+</checkbox-group>
+
+<view class="btn margin-tb-lg text-center">
+  <button class="cu-btn lg round bg-gradual-green" bindtap="SendTemplateInfo">模板消息发送</button>
+</view>
+
+<view class="tabbar_style"></view>

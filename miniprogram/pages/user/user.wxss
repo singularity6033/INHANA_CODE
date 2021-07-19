@@ -1,0 +1,40 @@
+.visitor .visitorMain {
+  height: 85vh;
+  width: 100vw;
+}
+
+.visitor .visitorMain .visitorCon {
+  background: #fff;
+}
+
+.visitor .visitorMain .visitorCon .visitorRow {
+  line-height: 90rpx;
+  border: 1px solid #f1f1f1;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.btn{
+  display: flex;
+  justify-content: space-between;
+  font-size: 27rpx;
+  font-weight: normal;
+  font-family: 'SimSun';
+  letter-spacing: -1px;
+  text-align: left;
+  line-height: 90rpx;
+  padding:0 30rpx;
+}
+
+.edit{
+  display: flex;
+  justify-content: flex-end;
+  font-size: 27rpx;
+  font-weight: normal;
+  font-family: 'SimSun';
+  padding: 15rpx 30rpx;
+}
+
+.nologin{
+  background-image: url("https://696e-inhana-cloud-1g9obu9p408701c5-1305238456.tcb.qcloud.la/2021%E7%9B%B4%E6%92%AD%E8%AF%BE/%E9%BB%98%E8%AE%A4%E5%A4%B4%E5%83%8F/user.png?sign=6cd305ac25e0319cb445baf0ebd002e8&t=1620289000")
+}

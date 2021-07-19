@@ -1,0 +1,20 @@
+<cu-custom bgColor="bg-gradual-orange" isBack="{{false}}">
+  <view slot="content">INHANA英翰语言戏剧</view>
+</cu-custom>
+
+<view class='box'>
+  <view class="edit text-right" bindtap="changeLanguage">EN|中文</view>
+  <view style="animation-delay: 1.5s;" class='animation-slide-left'>
+    <button class="cu-bar bg-white padding-xl margin-xl btn-box" catchtap='myUserinfo' >
+      <text class="txt text-xl">{{content.enter}}</text>
+      <view class="arrow"></view>
+    </button>
+    
+    <image class='login-box' src='https://696e-inhana-cloud-1g9obu9p408701c5-1305238456.tcb.qcloud.la/2021%E7%9B%B4%E6%92%AD%E8%AF%BE/%E5%A4%A7%E5%B0%81%E9%9D%A2/owl-login.png?sign=599f130494ed650da847a936ba1eada3&t=1620287389' mode='aspectFit'>
+    </image>
+    <view class='hand-l'></view>
+    <view class='hand-r'></view>
+  </view>
+  <text class="txt-xl"></text>
+</view>
+

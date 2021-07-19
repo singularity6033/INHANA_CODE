@@ -1,0 +1,29 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">INHANA英翰语言戏剧</view>
+</cu-custom>
+
+
+
+<view class="solid-bottom text-lg text-center bg-white light padding">
+  {{audio_record.question_name}}-我的音频
+</view>
+
+<view class='audioPlayer'>
+  <view class='player'>
+    <view class='audioControls bg-brown light'>
+      <view class="bottom">
+        <view wx:if="{{isplay==false}}" bindtap='Play'>
+          <image src="../../icon/pause.png"></image>
+        </view>
+        <view wx:if="{{isplay==true}}" bindtap='Pause'>
+          <image src="../../icon/play.png"></image>
+        </view>
+      </view>
+      <slider class="slider" block-color="#1aad19" activeColor='#1aad19' backgroundColor="#aeaeae" block-size="12" value="{{myAudioPos}}" bindchange="hanle_slider_change"></slider>
+      <view class="time">
+        <view class="timeLeft">{{myAudioCurrent}}</view>
+        <view class="timeRight">{{myAudioDuration}}</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,25 @@
+<cu-custom bgColor="bg-gradual-pink" isBack='{{true}}'>
+  <view slot="content">INHANA英翰语言戏剧</view>
+</cu-custom>
+<view 
+  wx:for="{{live_lecture_review_info}}"
+  wx:key="index">
+  <view class="solid-bottom text-lg text-center text-bold bg-white light padding">
+    {{item.title}}
+  </view>
+  
+  <view class='videoView'>
+    <txv-video defn vid="{{item.video_url}}" wx:if="{{item.video_url}}" playerid="my{{index}}" class='video' auto-pause-if-navigate object-fit bindplay="play"></txv-video>
+  </view>
+
+  <view class="text-sm text-bold text-left bg-white light padding"
+  data-src="{{item.navigator_url}}" bindtap="view_detail">
+    <view>点击了解详情>>></view>
+  </view>
+
+  <view class="view_fengexian">
+	  <view></view>
+	  <text class="text_fengexian">INHANA</text>
+	  <view></view>
+  </view>
+</view>

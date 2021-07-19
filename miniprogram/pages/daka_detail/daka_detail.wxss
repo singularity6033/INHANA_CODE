@@ -1,0 +1,4 @@
+/* pages/daka_detail/daka_detail.wxss */
+.box{
+  padding:50% 10%;
+}

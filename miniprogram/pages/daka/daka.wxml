@@ -1,0 +1,20 @@
+<cu-custom bgColor="bg-gradual-pink" isBack='{{false}}'>
+  <view slot="content">INHANA英翰语言戏剧</view>
+</cu-custom>
+<wxs src="../../wxs/common.wxs" module="common"/>
+
+<view class="idxCon" wx:for="{{newsList}}" wx:key="index" >
+    <view class="row cu-bar bg-white margin-top-sm" bindtap="ShowNewsOne" data-index="{{index}}" wx:if="{{item.visible}}">
+        <view class="rowTxt">
+          <view class="title text-black text-bold text-left">{{item.title}}</view>
+          <view class="info text-bold text-red margin-bottom-xs text-shadow text-left">点击进入课程</view>
+          <view class="info text-gray">
+            已有{{common.getMyNum(item.read)}}人参与
+          </view>
+        </view>
+        <view class="rowPic">
+          <image mode="aspectFit" src="{{item.cover_url}}" class="img"></image>
+        </view>
+  </view> 
+</view>
+<view class="tabbar_style"></view>

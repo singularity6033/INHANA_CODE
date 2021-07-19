@@ -1,0 +1,20 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">INHANA英翰语言戏剧</view>
+</cu-custom>
+
+<view class="idxCon" wx:for="{{live_record}}" wx:key="index">
+    <view class="row cu-bar bg-white margin-top-sm">
+        <view class="rowTxt">
+          <view class="info text-left">观看次数：{{item.live_num}}</view>
+          <view class="info text-left">学校：{{item.live_info[0].school}}</view>
+          <view class="info text-left">姓名：{{item.live_info[0].name}}</view>
+          <view class="info text-left">性别：{{item.live_info[0].gender}}</view>
+          <view class="info text-left">年级：{{item.live_info[0].grade}}</view>
+          <view class="info text-left">联系方式：{{item.live_info[0].phone}}</view>
+        </view>
+  </view> 
+</view>
+<view class="text-sm text-center text-black bg-white padding margin-sm">
+  共有{{live_num}}条记录
+</view>
+<view class="tabbar_style"></view>

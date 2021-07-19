@@ -1,0 +1,13 @@
+.imgGroup {
+  width: 100%;
+}
+.imgGroup .img1 {
+  height:60%;
+  width:60%;
+  padding:10rpx;
+  margin: auto;
+  display: block;
+}
+page{
+  background-color: white;
+}

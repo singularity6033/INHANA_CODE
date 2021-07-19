@@ -1,0 +1,23 @@
+<cu-custom bgColor="bg-gradual-pink" isBack='{{false}}'>
+  <view slot="content">INHANA语言戏剧教育</view>
+</cu-custom>
+<view class="idxCon" wx:for="{{UserInfoGradingList}}" wx:key="index">
+    <view class="row cu-bar bg-white margin-top-sm">
+        <view class="rowTxt">
+          <view class="info text-gray"><text selectable="true" class="text-black">考生中文名：</text><text selectable="true">{{item.name_CN}}</text></view>
+          <view class="info text-gray"><text selectable="true" class="text-black">考生英文名：</text><text selectable="true">{{item.name_EN}}</text></view>
+          <view class="info text-gray"><text selectable="true" class="text-black">考生学校：</text><text selectable="true">{{item.school}}</text></view>
+          <view class="info text-gray"><text selectable="true" class="text-black">考点：</text><text selectable="true">{{item.date}}</text></view>
+          <view class="info text-gray"><text selectable="true" class="text-black">商品名称：</text><text selectable="true">{{item.item_name}}</text></view>
+          <view class="info text-gray"><text selectable="true" class="text-black">商品类别：</text><text selectable="true">{{item.item_class}}</text></view>
+          <view class="info text-gray"><text selectable="true" class="text-black">商品价格：</text><text selectable="true" class="text-price"><text selectable="true">{{item.item_price}}</text></text>
+          </view>
+          <view class="info text-gray"><text selectable="true" class="text-black">购买时间：</text><text selectable="true">{{item.payTime}}</text></view>
+          <view class="info text-gray"><text selectable="true" class="text-black">订单号：</text><text selectable="true">{{item.payOrder}}</text></view>
+        </view>
+  </view> 
+</view>
+<view class="solid-bottom text-sm text-center text-black bg-white light padding margin-sm">
+  共有{{grading_num}}条记录
+</view>
+<view class="tabbar_style"></view>

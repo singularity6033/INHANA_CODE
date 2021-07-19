@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "DakaAdmin": "/pages/admin_daka/admin_daka",
+    "Data": "/pages/admin_data/admin_data",
+    "GradingAdmin": "/pages/admin_grading_record/admin_grading_record",
+    "TemplateInfo": "/pages/template_info_edit/template_info_edit"
+  }
+}

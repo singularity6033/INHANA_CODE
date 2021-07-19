@@ -1,0 +1,10 @@
+/* pages/login_info/login_info.wxss *//* pages/login_info/login_info.wxss */
+page{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.box{
+  width: 100%;
+  height: 100%;
+}

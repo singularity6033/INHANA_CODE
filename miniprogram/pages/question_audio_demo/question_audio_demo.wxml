@@ -1,0 +1,20 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">INHANA英翰语言戏剧</view>
+</cu-custom>
+
+<view class="solid-bottom text-lg text-center text-bold bg-white light padding">
+    {{one_audio_question.audio_name}}
+</view>
+
+<view class='videoView'>
+  <txv-video defn vid="{{one_audio_question.audio_demo_src}}" playerid="myVideo" wx:if="{{one_audio_question.audio_demo_src}}" class='video' auto-pause-if-navigate object-fit></txv-video>
+</view>
+<view class='aline'></view>
+
+<view wx:for="{{one_audio_question.question_url}}">
+  <image mode="widthFix" src="{{item}}" class="img"></image>
+</view>
+
+<view class="btn margin-tb-lg text-center">
+  <button class="cu-btn lg round bg-gradual-green" bindtap="Try">我的尝试</button>
+</view>

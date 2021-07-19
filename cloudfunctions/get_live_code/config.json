@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "openapi": [
+    ]
+  },
+  "dependencies": {
+    "wx-server-sdk":"latest",
+    "request-promise":"^4.2.2"
+  }
+}

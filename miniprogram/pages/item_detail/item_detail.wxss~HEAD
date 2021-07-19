@@ -1,0 +1,17 @@
+.imgGroup {
+  width: 100%;
+}
+.imgGroup .img1 {
+  height:100%;
+  width:100%;
+  margin: auto;
+  display: block;
+}
+.btn{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.tabbar_style{
+  padding-bottom: 150rpx;
+}

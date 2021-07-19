@@ -1,0 +1,117 @@
+<cu-custom bgColor="bg-gradual-pink" isBack="{{false}}">
+  <view slot="content">INHANA英翰语言戏剧</view>
+</cu-custom>
+
+<view class="visitor" wx:if="{{userInfo}}">
+  <navigator url="../update_login_info/update_login_info">
+    <view class="text-right edit">{{content.edit}} ></view>
+  </navigator>
+  <view class="flex padding justify-center margin-top-xl">
+    <view class="cu-avatar round lg" style="background-image:url({{userInfo.avatarUrl}});">
+      <view class="cu-tag badge {{userGender%2==0?'cuIcon-female bg-pink':'cuIcon-male bg-blue'}}">
+      </view>
+    </view>
+  </view>
+  <view class="flex justify-center padding-bottom-xl">
+    <view class="cu-capsule radius padding-right">
+      <view class="cu-tag bg-red">
+        <text>{{content.name}}</text>
+      </view>
+      <view class="cu-tag line-red">
+        {{userInfo.name}}
+      </view>
+    </view>
+    <view class="cu-capsule radius">
+      <view class="cu-tag bg-blue">
+        <text>{{content.school}}</text>
+      </view>
+      <view class="cu-tag line-blue">
+        {{userInfo.school}}
+      </view>
+    </view>
+  </view>
+
+  <view class="visitorMain">
+    <view class="visitorRow">
+      <button style="width:100%" class="btn" bindtap="switch_language">{{content.language}} (EN|中文)
+        <text decode>&nbsp;&nbsp;&nbsp;></text>
+      </button>
+    </view> 
+    <view class="visitorCon">
+      <navigator class="visitorRow" url="../daka_record/daka_record">
+        <button style="width:100%" class="btn">{{content.learning_record}}
+          <text decode>&nbsp;&nbsp;&nbsp;></text>
+        </button>
+      </navigator>
+      <navigator class="visitorRow" url="../pay_record/pay_record">
+        <button style="width:100%" class="btn">{{content.payment_record}}
+          <text decode>&nbsp;&nbsp;&nbsp;></text>
+        </button>
+      </navigator>
+      <navigator class="visitorRow" url="../pay_record/pay_record">
+        <button style="width:100%" class="btn">我的考级
+          <text decode>&nbsp;&nbsp;&nbsp;></text>
+        </button>
+      </navigator>
+      <view class="visitorRow">
+        <button style="width:100%" class="btn" open-type="contact">{{content.contact}}
+          <text decode>&nbsp;&nbsp;&nbsp;></text>
+        </button>
+      </view>
+      <view class="visitorRow">
+        <button style="width:100%" class="btn" open-type="share">{{content.share}}
+          <text decode>&nbsp;&nbsp;&nbsp;></text>
+        </button>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="visitor" wx:if="{{!userInfo}}">
+  <view class="flex padding justify-center margin-top-xl">
+    <view class="cu-avatar nologin round lg"></view>
+  </view>
+
+  <view class="flex justify-center padding-bottom-sm">
+    <view class="cu-capsule radius padding-right">
+      <view class="cu-tag bg-red">
+        <text>{{content.name}}</text>
+      </view>
+      <view class="cu-tag line-red">
+        N.A.
+      </view>
+    </view>
+    <view class="cu-capsule radius">
+      <view class="cu-tag bg-blue">
+        <text>{{content.school}}</text>
+      </view>
+      <view class="cu-tag line-blue">
+        N.A.
+      </view>
+    </view>
+  </view>
+
+  <view class="btn margin-tb-sm text-center">
+    <button class="cu-btn df round bg-gradual-blue light" bindtap="Login">{{content.login}}</button>
+  </view> 
+
+  <view class="visitorMain"> 
+    <view class="visitorCon">
+      <view class="visitorRow">
+        <button style="width:100%" class="btn" bindtap="switch_language">{{content.language}} (EN|中文)
+          <text decode>&nbsp;&nbsp;&nbsp;></text>
+        </button>
+      </view>
+      <view class="visitorRow">
+        <button style="width:100%" class="btn" open-type="contact">{{content.contact}}
+          <text decode>&nbsp;&nbsp;&nbsp;></text>
+        </button>
+      </view>
+      <view class="visitorRow">
+        <button style="width:100%" class="btn" open-type="share">{{content.share}}
+          <text decode>&nbsp;&nbsp;&nbsp;></text>
+        </button>
+      </view>
+    </view>
+  </view>
+</view>

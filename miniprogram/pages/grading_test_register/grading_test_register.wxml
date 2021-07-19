@@ -1,0 +1,90 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">INHANA英翰语言戏剧</view>
+</cu-custom>
+
+<view class="padding text-center">
+  <view class="padding-xl radius text-lg text-bold shadow bg-blue margin-top">{{content.registration_grading}}</view>
+</view>
+
+<scroll-view scroll-y="true" style="height: 1000rpx;" class='padding'>
+  <view class="padding text-lg">
+    <text class="text-red">*</text><text>为必填项</text>
+  </view>
+  <form bindsubmit="onSubmit">
+    <view class="padding text-lg">{{content.school}}
+      <text class="text-red">*</text>
+    </view>
+    <view class="cu-form-group margin-bottom box">
+      <input bindinput="IptChanged" name="school" placeholder="{{content.school}}"></input>
+    </view>
+
+    <view class="padding text-lg">{{content.grade_and_class}}
+      <text class="text-red">*</text>
+    </view>
+    <view class="cu-form-group margin-bottom box">
+      <input bindinput="IptChanged" name="Class" placeholder="{{content.grade_and_class_clue}}"></input>
+    </view>
+
+    <view class="padding text-lg">{{content.chinese_name}}
+      <text class="text-red">*</text>
+    </view>
+    <view class="cu-form-group margin-bottom box">
+      <input bindinput="IptChanged" name="name_CN" placeholder="{{content.chinese_name}}"></input>
+    </view>
+
+    <view class="padding text-lg">{{content.english_name}}</view>
+    <view class="cu-form-group margin-bottom box">
+      <input bindinput="IptChanged" name="name_EN" placeholder="{{content.english_name}}"></input>
+    </view>
+    <!-- picker -->
+    <view class="padding text-lg">{{content.gender}}
+      <text class="text-red">*</text>
+    </view>
+    <view class="cu-form-group margin-bottom box">
+      <picker mode="selector" range="{{gender}}" value="{{index1}}" bindchange="genderPicker">
+        <view class="picker">{{content.choose}}：{{gender[index1]}}</view>
+      </picker>
+    </view>
+
+    <view class="padding text-lg">{{content.certificate_name}}
+      <text class="text-red">*</text>
+    </view>
+    <view class="cu-form-group margin-bottom box">
+      <textarea bindinput="IptChanged" name="name" placeholder="{{content.certificate_name_clue}}"></textarea>
+    </view>
+
+    <view class="padding text-lg">{{content.birthday}}
+      <text class="text-red">*</text>
+    </view>
+    <view class="cu-form-group margin-bottom box">
+      <input bindinput="IptChanged" name="birth" placeholder="{{content.birthday_clue}}"></input>
+    </view>
+
+    <view class="padding text-lg">{{content.nationality}}
+      <text class="text-red">*</text>
+    </view>
+    <view class="cu-form-group margin-bottom box">
+      <input bindinput="IptChanged" name="country" placeholder="{{content.nationality}}"></input>
+    </view>
+    <view class="padding text-lg">{{content.phone}}
+      <text class="text-red">*</text>
+    </view>
+    <view class="cu-form-group margin-bottom box">
+      <input bindinput="IptChanged" name="phone" placeholder="{{content.phone}}"></input>
+    </view>
+    <!-- picker -->
+    <view class="padding text-lg">{{content.test_center_and_date}}
+      <text class="text-red">*</text>
+    </view>
+    <view class="cu-form-group margin-bottom box">
+      <picker mode="selector" range="{{date}}" value="{{index2}}" bindchange="datePicker">
+        <view class="picker">{{content.choose}}：{{date[index2]}}</view>
+      </picker>
+    </view>
+    <!-- button -->
+    <view class="cu-bar btn-group">
+        <button class="cu-btn bg-green shadow-blur round" form-type="submit" disabled="{{btnShow}}" type="primary">{{content.registration}}</button>
+        <button class="cu-btn Btn bg-green shadow-blur round" form-type="reset" type="primary" plain>{{content.reset}}</button>
+    </view>
+  </form>
+</scroll-view>

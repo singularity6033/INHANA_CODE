@@ -1,0 +1,36 @@
+<wxs src="../../wxs/common.wxs" module="common"></wxs>
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
+  <view slot="content">INHANA英翰语言戏剧</view>
+</cu-custom>
+
+<view class="idxCon" wx:for="{{VideoList}}" wx:key="index">
+    <view class="row cu-bar bg-white margin-top-sm" bindtap="VideoDetail" data-index="{{index}}">
+        <view class="rowTxt">
+          <view class="title text-black text-bold text-left">{{common.getStrLen(item.name,60)}}</view>
+          <view class="info text-gray">
+            播放{{common.getMyNum(item.play_num)}}-赞{{common.getMyNum(item.zan)}}
+          </view>
+        </view>
+        <view class="rowPic">
+          <image mode="aspectFit" src="{{item.cover_url}}" class="img"></image>
+        </view>
+  </view> 
+</view>
+<view class="tabbar_style"></view>
+
+<!-- <view class="flex bg-white"
+  wx:for="{{VideoList}}"
+  wx:key="index"
+  >  
+    <view class="flex-sub padding-xs margin-xs radius bg-gray" bindtap="VideoDetail" data-index="{{index}}">
+      <image class="img1" mode="aspectFit" src="{{item.cover_url}}"></image>
+    </view>
+    <view class="flex-twice padding-xs margin-xs radius bg-gray" bindtap="VideoDetail" data-index="{{index}}">
+      <view class="solid-bottom text-df text-left text-bold bg-white light padding">
+         {{common.getStrLen(item.name,60)}}
+      </view>
+      <view class="solid-bottom text-gray text-sm text-left bg-white light padding">
+         播放{{common.getMyNum(item.play_num)}}-赞{{common.getMyNum(item.zan)}}
+      </view>
+    </view>
+</view> -->

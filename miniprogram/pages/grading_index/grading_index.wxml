@@ -1,0 +1,54 @@
+<cu-custom bgColor="bg-gradual-pink" isBack='{{true}}'>
+  <view slot="content">INHANA英翰语言戏剧</view>
+</cu-custom>
+<wxs src="../../wxs/common.wxs" module="common"/>
+
+<scroll-view class="index_overall">
+  <swiper class="card-swiper bg-white {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+      <swiper-item
+      wx:for="{{swiperList}}"
+      class="{{cardCur==index?'cur':''}}"
+      >
+        <view class="swiper-item" bindtap="preview_swiper_img" data-src="{{item.swiper_img_url}}">
+          <image mode="aspectFill" src="{{item.swiper_img_url}}"></image>
+        </view>  
+      </swiper-item>
+  </swiper>
+
+  <view class="cu-list grid col-3 margin-sm">
+	  <view class="cu-item">
+      <navigator url='../grading_test_home/grading_test_home'>
+        <view class="cuIcon-shop text-red"></view>
+        <text class="text-df text-bold">考级报名</text>
+        <!-- <text class="text-lg text-bold">Apply For Exams</text> -->
+      </navigator>
+    </view>
+
+    <view class="cu-item">
+      <navigator url='../detail/detail'>
+        <view class="cuIcon-magic text-red"></view>
+        <text class="text-df text-bold">学习资源</text>
+        <!-- <text class="text-lg text-bold">Learning Resources</text> -->
+      </navigator>
+    </view>
+
+    <view class="cu-item">
+      <navigator url='../grading_train_home/grading_train_home'>
+        <view class="cuIcon-paint text-red"></view>
+        <text class="text-df text-bold">考级培训</text>
+      </navigator>
+    </view>
+    
+    <!-- <view class="cu-item">
+      <navigator>
+        <view class="cuIcon-news text-red"></view>
+        <text class="text-lg test-black text-bold">相关活动</text>
+        <text class="text-lg test-black text-bold">Activities</text>
+      </navigator>
+	  </view> -->
+ </view>
+   
+  <view class="imgGroup">
+    <image class="img1" mode="widthFix" src="{{grading_intro_url.grading_intro_url}}" data-src="{{grading_intro_url.grading_intro_url}}" bindtap="preview_swiper_img"></image>
+  </view>
+</scroll-view>

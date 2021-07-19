@@ -1,0 +1,45 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">INHANA英翰语言戏剧</view>
+</cu-custom>
+
+  <view class="cu-bar margin-sm bg-white" wx:if="{{!isShow3}}">
+		<view class="action">
+			<text class="text-lg text-bold">下载专区</text>
+			<text class="text-Abc text-gray self-end margin-left-sm">Downloads</text>
+		</view>
+  </view>
+  
+  <view class="btn-group margin-tb-lg text-center padding" wx:if="{{!isShow3}}">
+    <button class="cu-btn lg round bg-gradual-orange margin-xs" bindtap="download" data-item="课前资料">课前资料</button>
+    <button class="cu-btn lg round bg-gradual-orange margin-xs" bindtap="download" data-item="课后资料">课后资料</button>
+  </view>
+
+  <view class="cu-bar margin-sm bg-white" wx:if="{{!isShow3}}">
+		<view class="action">
+			<text class="text-lg text-bold">课程练习</text>
+			<text class="text-Abc text-gray self-end margin-left-sm">Practices</text>
+		</view>
+  </view>
+  
+  <view class="btn btn-group margin-tb-lg text-center padding" wx:if="{{!isShow3}}">
+    <button class="cu-btn lg round bg-gradual-green margin-xs" bindtap="choice">选择题</button>
+    <button class="cu-btn lg round bg-gradual-green margin-xs" bindtap="audio" data-item="normal" wx:if="{{!isShow1 && !isShow2}}">朗读练习</button>
+    <button class="cu-btn lg round bg-gradual-green margin-xs" bindtap="audio" data-item="girl" wx:if="{{isShow1}}">朗读练习（女生）</button>
+    <button class="cu-btn lg round bg-gradual-green margin-xs" bindtap="audio" data-item="boy" wx:if="{{isShow1}}">朗读练习（男生）</button>
+    <button class="cu-btn lg round bg-gradual-green margin-xs" bindtap="audio" data-item="normal1" wx:if="{{isShow2}}">朗读练习1</button>
+    <button class="cu-btn lg round bg-gradual-green margin-xs" bindtap="audio" data-item="normal2" wx:if="{{isShow2}}">朗读练习2</button>
+    <button class="cu-btn lg round bg-gradual-green margin-xs" bindtap="audio" data-item="normal3" wx:if="{{isShow2}}">朗读练习3</button>
+  </view>
+
+  <view class="cu-bar margin-sm bg-white">
+		<view class="action">
+			<text class="text-lg text-bold">直播课</text>
+			<text class="text-Abc text-gray self-end margin-left-sm">Live Courses</text>
+		</view>
+  </view>
+
+  <view class="btn-group margin-tb-lg text-center padding">
+    <button class="cu-btn lg round bg-gradual-blue margin-xs" bindtap="review">直播课视频</button>
+  </view>
+
+

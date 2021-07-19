@@ -1,0 +1,64 @@
+<wxs src="../../wxs/common.wxs" module="common"></wxs>
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
+  <view slot="content">近期活动</view>
+</cu-custom>
+
+<view class="container">
+  <view class="text-xl text-bold">{{dataone.title}}</view>
+  <view class="info1">浏览人数: {{dataone.read}}</view>
+  <view class="info2">发布时间: {{common.myDate(dataone.posttime,1)}}</view> 
+  <view class="text-lg text-bold text-orange">课程简介</view>
+  <view class="imgGroup">
+    <image class="img1" mode="widthFix" src="{{dataone.cover_url}}"></image>
+  </view>
+  <view class="main">
+    {{dataone.content}}
+  </view>
+  
+  <view class="text-lg text-bold text-orange">上课时间</view>
+  <view class="main">
+    {{common.myDate(dataone.start_time,1)}}
+  </view>
+
+  <view class="text-lg text-bold text-orange padding-bottom-lg">授课老师-
+    <text>{{dataone.teacher}}</text>
+  </view>
+  <view class="bg-white">
+    <view class="flex">
+      <view class="flex-sub padding-xs radius"
+       wx:for="{{dataone.teacher_picUrl}}">
+        <image class="img0" mode="aspectFit" src="{{item}}"></image>
+      </view>
+      <view class="flex-treble padding-xs radius">
+        <view class="teacher_info"
+         wx:for="{{dataone.teacher_info}}">
+          {{item}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="text-lg text-bold text-orange padding-bottom-lg padding-top-lg">报名方式</view>
+  <view class="text-lg text-orange light">Step 1: 填写报名表</view>
+  <view bindtap="order_submit">
+    <navigator target="miniProgram"
+      open-type="navigate"
+      app-id="wxd947200f82267e58"
+      path="{{dataone.baoming_url}}"
+      version="release">
+      <view class="main">点击进入报名链接</view>
+    </navigator>
+  </view> 
+    
+  <view class="text-lg text-orange light">Step 2: 点击下方二维码，长按保存至相册，使用微信扫一扫进入
+    <view class="imgGroup">
+      <image class="img1" mode="widthFix" src="{{dataone.live_code}}" data-src="{{dataone.live_code}}" bindtap="previewImage"></image>
+    </view>
+  </view>
+</view>
+
+
+
+<official-account class="cu-bar margin-sm"></official-account>
+
+<button bindtap="ceshi">直播</button>

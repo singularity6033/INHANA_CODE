@@ -1,0 +1,50 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{false}}">
+  <view slot="content">INHANA英翰语言戏剧</view>
+</cu-custom>
+<view id="viewCommunicationBody">
+  <view class="solid-bottom text-lg text-center text-bold bg-white light padding">
+    {{one_audio_question.audio_name}}
+</view>
+
+<view wx:for="{{one_audio_question.question_url}}" class="question">
+  <image class="img" mode="widthFix" src="{{item}}"></image>
+</view>
+
+<view class="btn margin-tb-lg padding text-center">
+  <button class="cu-btn lg round bg-gradual-green" bindtouchstart="start" bindtouchend="stop">{{isTouchStart?'松开结束':'长按录音'}}</button>
+</view>
+
+<view class='audioPlayer bg-grayblack' wx:if="{{tempPath.length>0}}">
+  <view class='player'>
+    <view class='audioControls bg-brown light'>
+      <view class="bottom">
+        <view wx:if="{{isplay==false}}" bindtap='Play'>
+          <image src="../../icon/pause.png"></image>
+        </view>
+        <view wx:if="{{isplay==true}}" bindtap='Pause'>
+          <image src="../../icon/play.png"></image>
+        </view>
+      </view>
+      <slider class="slider" block-color="#1aad19" activeColor='#1aad19' backgroundColor="#aeaeae" block-size="12" value="{{myAudioPos}}" bindchange="hanle_slider_change"></slider>
+      <view class="time">
+        <view class="timeLeft">{{myAudioCurrent}}</view>
+        <view class="timeRight">{{myAudioDuration}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="flex align-center bg-white margin-tb-lg padding-bottom-xl">
+    <button class="cu-btn bg-blue lg light shadow-blur round" bindtap="restart">重置</button>
+    <button class="cu-btn bg-green light lg shadow-blur round" bindtap="onSubmit">提交</button>
+</view>
+
+<view class="cu-load load-modal" wx-if="{{isShow}}">
+	<image src="/images/cj.png" mode="aspectFit"></image>
+	<view class="gray-text">{{review}}</view>
+</view>
+</view>
+
+
+
+

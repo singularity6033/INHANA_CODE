@@ -1,0 +1,22 @@
+<wxs src="../../wxs/common.wxs" module="common"></wxs>
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
+  <view slot="content">INHANA英翰语言戏剧</view>
+</cu-custom>
+
+<view wx:for="{{live_replay}}" wx:key="index">
+  <view class="solid-bottom text-lg text-center text-bold bg-white light padding">
+    {{item.name}}
+  </view>
+  <view class='videoView'>
+    <txv-video defn vid="{{item.live_url}}" wx:if="{{item.live_url}}" playerid="my{{index}}" class='video' auto-pause-if-navigate object-fit bindplay="play"></txv-video>
+  </view>
+  <view class="zanBox" bindtap="pushZan" data-index="{{index}}">
+    <image class="img2" src="{{item.zanShow?'../../images/like_h.png':'../../images/like.png'}}"></image>
+    <view class="num">
+      {{common.getMyNum(item.zan)}}
+    </view>
+  </view>
+  <view class='aline'></view>
+</view>
+
+

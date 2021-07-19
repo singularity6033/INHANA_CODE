@@ -1,0 +1,25 @@
+<cu-custom bgColor="bg-gradual-pink" isBack='{{false}}'>
+  <view slot="content">INHANA英翰语言戏剧</view>
+</cu-custom>
+<wxs src="../../wxs/common.wxs" module="common"/>
+
+<view class="cu-card article" 
+  wx:for="{{newsList}}"
+  wx:key="index"
+  >
+  <view class="cu-item shadow" data-src="{{item.navigator_url}}" bindtap="view_detail">
+    <view class="title">
+      <view class="text-cut">{{item.title}}</view>
+    </view>
+    <view class="content">
+      <image src="{{item.cover_url}}" mode="aspectFill"></image>
+      <view class="desc">
+        <view class="text-grey">{{common.getStrLen(item.content,35)}}</view>
+        <view class="text-grey text-sm">
+          <text class="cuIcon-attentionfill"> {{common.getMyNum(item.read)}}</text>
+          <text class="text_bar">{{common.timesFun(item.timestamp)}}前</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
