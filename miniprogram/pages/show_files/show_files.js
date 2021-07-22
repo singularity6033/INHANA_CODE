@@ -1,10 +1,21 @@
+var index_name = ""
+var filesList = []
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    introList:[]
+    FilesList: []
+  },
+
+  backToHome(){
+    setTimeout(()=>{
+      wx.setStorageSync('PageCur', 'FrontPage')
+      wx.reLaunch({
+        url: '../student_page/student_page',
+      })
+    }, 100)
   },
 
   preview_swiper_img(e){
@@ -16,21 +27,32 @@ Page({
 		})
   },
 
-  getIntroList(){
+  getFilesList(){
     wx.cloud.callFunction({
-      name:"get_intro_img"
+      name:"get_files",
+      data: {index_name}
     }).then(res=>{
-      this.setData({
-        introList:res.result.data
-      })
+      console.log(res)
+      filesList = res.result.data
+      if(filesList.length==0){
+        this.setData({
+          blankShow: true,
+        })
+      }else{
+        this.setData({
+          blankShow: false,
+          FilesList: filesList[0].pic_url_list
+        })
+      }
     })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    this.getIntroList()
+  onLoad: function (options){
+    index_name = wx.getStorageSync('index_name')
+    this.getFilesList()
   },
 
   /**

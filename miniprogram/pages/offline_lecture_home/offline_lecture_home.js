@@ -21,7 +21,7 @@ Page({
       })
       wx.setStorageSync('PageCur', 'User')
       setTimeout(() => {
-        wx.reLaunch({
+        wx.navigateTo({
           url: '../student_page/student_page',
         })
       }, 1500);
@@ -38,6 +38,15 @@ Page({
       })
       wx.hideLoading()
     })
+  },
+
+  backToHome(){
+    setTimeout(()=>{
+      wx.setStorageSync('PageCur', 'FrontPage')
+      wx.reLaunch({
+        url: '../student_page/student_page',
+      })
+    }, 100)
   },
 
   onLoad: function (options) {

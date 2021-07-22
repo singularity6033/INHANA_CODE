@@ -4,7 +4,7 @@
 .idxCon .row {
   display: flex;
   border-bottom: 1px solid #eeeeee;
-  line-height: 150%;
+  line-height: 180%;
   padding: 20rpx 0;
   height: 50%;
   justify-content: space-between;

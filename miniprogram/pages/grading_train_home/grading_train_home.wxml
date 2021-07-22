@@ -1,5 +1,8 @@
 <cu-custom bgColor="bg-gradual-pink" isBack='{{true}}'>
   <view slot="content">LAMDA考级培训</view>
+  <view slot="backText" class="margin-lg text-xl" bindtap="backToHome">
+    <text class="cuIcon-home"></text>
+  </view>
 </cu-custom>
 <wxs src="../../wxs/common.wxs" module="common"/>
 
@@ -42,7 +45,7 @@
         <text decode class="text-green">&nbsp;&nbsp;&nbsp;>>>点击解锁</text>
       </view>
       <view class="info text-bold text-green margin-bottom-xs text-shadow text-left" wx:if="{{isPay[index]}}"
-      bindtap="ShowTrainingDetail">查看培训计划</view>
+      bindtap="ShowTrainingDetail" data-index="{{index}}">查看培训计划</view>
       <view class="info text-sm text-gray">
         已有{{common.getMyNum(item.num)}}人参与培训计划
       </view>

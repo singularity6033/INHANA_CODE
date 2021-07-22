@@ -87,6 +87,15 @@ Page({
     })
   },
 
+  backToHome(){
+    setTimeout(()=>{
+      wx.setStorageSync('PageCur', 'FrontPage')
+      wx.reLaunch({
+        url: '../student_page/student_page',
+      })
+    }, 100)
+  },
+
   onLoad: function (options) {
     var live_replay = wx.getStorageSync('live_replay')
     this.getUser(live_replay)

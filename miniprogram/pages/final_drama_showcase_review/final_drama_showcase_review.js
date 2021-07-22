@@ -10,6 +10,15 @@ Page({
     id: -1,  // 用于关掉上一个视频
   },
 
+  backToHome(){
+    setTimeout(()=>{
+      wx.setStorageSync('PageCur', 'FrontPage')
+      wx.reLaunch({
+        url: '../student_page/student_page',
+      })
+    }, 100)
+  },
+
   play_introduce(){
     wx.cloud.callFunction({
       name:"get_final_drama_showcase_review"

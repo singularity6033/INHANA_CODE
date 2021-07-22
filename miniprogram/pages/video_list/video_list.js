@@ -8,6 +8,15 @@ Page({
     VideoList:[]
   },
 
+  backToHome(){
+    setTimeout(()=>{
+      wx.setStorageSync('PageCur', 'FrontPage')
+      wx.reLaunch({
+        url: '../student_page/student_page',
+      })
+    }, 100)
+  },
+
   VideoDetail(e){
     index = e.currentTarget.dataset.index
     wx.setStorageSync('videodetail', this.data.VideoList[index])
@@ -17,10 +26,10 @@ Page({
   },
 
   getVideoList(){
-    var LectureName = wx.getStorageSync('lecture_name')
+    var index_name = wx.getStorageSync('index_name')
     wx.cloud.callFunction({
       name:"get_lecture_detail",
-      data: {LectureName}
+      data: {index_name}
     }).then(res=>{
       this.setData({
         VideoList: res.result.data

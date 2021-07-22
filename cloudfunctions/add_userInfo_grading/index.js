@@ -21,7 +21,9 @@ exports.main = async (event, context) => {
         birth, 
         country, 
         phone,
-        RegisterTime
+        RegisterTime,
+        score: "",
+        PIN:""
       }
     })
 }

@@ -19,6 +19,15 @@ Page({
     scrollTop: 0 // 内容底部与顶部的距离
   },
 
+  backToHome(){
+    setTimeout(()=>{
+      wx.setStorageSync('PageCur', 'FrontPage')
+      wx.reLaunch({
+        url: '../student_page/student_page',
+      })
+    }, 100)
+  },
+
   getUser(){
     wx.cloud.callFunction({
       name: "get_userInfo",

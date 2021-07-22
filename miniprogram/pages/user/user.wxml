@@ -48,7 +48,7 @@
           <text decode>&nbsp;&nbsp;&nbsp;></text>
         </button>
       </navigator>
-      <navigator class="visitorRow" url="../pay_record/pay_record">
+      <navigator class="visitorRow" url="../search_grading_score/search_grading_score">
         <button style="width:100%" class="btn">我的考级
           <text decode>&nbsp;&nbsp;&nbsp;></text>
         </button>

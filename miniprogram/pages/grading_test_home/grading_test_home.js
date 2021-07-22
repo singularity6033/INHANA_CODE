@@ -16,6 +16,15 @@ Page({
     })
   },
 
+  backToHome(){
+    setTimeout(()=>{
+      wx.setStorageSync('PageCur', 'FrontPage')
+      wx.reLaunch({
+        url: '../student_page/student_page',
+      })
+    }, 100)
+  },
+
   ShowDataOne(e){
     if(app.globalData.userInfo){
       var index = e.currentTarget.dataset.index;
@@ -32,7 +41,7 @@ Page({
       })
       wx.setStorageSync('PageCur', 'User')
       setTimeout(() => {
-        wx.reLaunch({
+        wx.navigateTo({
           url: '../student_page/student_page',
         })
       }, 1500);

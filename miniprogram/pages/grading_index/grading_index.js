@@ -11,10 +11,18 @@ Page({
     cardCur:0
   },
 
+  backToHome(){
+    setTimeout(()=>{
+      wx.setStorageSync('PageCur', 'FrontPage')
+      wx.reLaunch({
+        url: '../student_page/student_page',
+      })
+    }, 100)
+  },
+
   cardSwiper(e) {
-    // console.log(e.detail.current)
     this.setData({
-      cardCur:e.detail.current
+      cardCur: e.detail.current
     })
   },
 
@@ -27,7 +35,7 @@ Page({
       }
     }).then(res=>{
       this.setData({
-        swiperList:res.result.data
+        swiperList: res.result.data
       })
     })
   },
@@ -38,7 +46,7 @@ Page({
       name:"get_grading_intro_img"
     }).then(res=>{
       this.setData({
-        grading_intro_url:res.result.data[0]
+        grading_intro_url: res.result.data[0]
       })
       wx.hideLoading()
     })
@@ -52,9 +60,7 @@ Page({
         urls: [cur] // 数组，需要预览的图片链接列表
     })
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
+
   onLoad: function (options) {
     this.getSwiperList();
     this.getActivityImg();

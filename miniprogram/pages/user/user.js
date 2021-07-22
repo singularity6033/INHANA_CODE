@@ -1,4 +1,3 @@
-// pages/user/user.js
 const app = getApp();
 var user=[]
 var userGender=1;
@@ -26,14 +25,21 @@ Component({
         wx.cloud.callFunction({
           name: "get_userInfo",
         }).then(res1 => {
-          if(res1.result.data.length!=0){  
-            wx.setStorageSync('PageCur', 'User')
-            wx.reLaunch({
-              url: '../student_page/student_page',
+          if(res1.result.data.length!=0){ 
+            wx.navigateBack({
+              delta: 1,
+              fail: function(res) {
+                wx.setStorageSync('PageCur', 'User')
+                setTimeout(() => {
+                  wx.reLaunch({
+                    url: '../student_page/student_page',
+                  })
+                }, 100);
+              },
             })
           }else{
             setTimeout(()=>{
-              wx.redirectTo({
+              wx.navigateTo({
                 url: '../login_info/login_info',
                 }) 
             },500)

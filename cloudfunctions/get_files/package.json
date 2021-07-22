@@ -1,5 +1,5 @@
 {
-  "name": "add_payment_record",
+  "name": "get_files",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

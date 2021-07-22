@@ -1,11 +1,16 @@
 <cu-custom bgColor="bg-gradual-pink" isBack='{{true}}'>
   <view slot="content">INHANA英翰语言戏剧</view>
+  <view slot="backText" class="margin-lg text-xl" bindtap="backToHome">
+    <text class="cuIcon-home"></text>
+  </view>
 </cu-custom>
 <view class="idxCon" wx:for="{{pay_record}}" wx:key="index">
     <view class="row cu-bar bg-white margin-top-sm">
         <view class="rowTxt">
           <view class="info text-gray"><text class="text-black">{{content.class_name}}: </text>
             {{item.item_name}}</view>
+          <view class="info text-gray"><text class="text-black">类别: </text>
+            {{item.item_class}}</view>
           <view class="info text-gray"><text class="text-black">{{content.class_price}}: </text>
             <text class="text-price">{{item.item_price}}</text>
           </view>

@@ -1,1 +1,4 @@
-/* pages/grading_train_content/grading_train_content.wxss */
+/* pages/daka_detail/daka_detail.wxss */
+.box{
+  padding:50% 10%;
+}

@@ -1,60 +1,69 @@
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view slot="content">INHANA英翰语言戏剧</view>
+  <view slot="backText" class="margin-lg text-xl" bindtap="backToHome">
+    <text class="cuIcon-home"></text>
+  </view>
 </cu-custom>
 
-<view class="solid-bottom text-lg text-center text-bold bg-white light padding">
+<view wx:if="{{!blankShow}}">
+  <view class="solid-bottom text-lg text-center text-bold bg-white light padding">
     {{current_question.choice_name}}
-</view>
+  </view>
 
-<view class="cu-progress round sm striped">
+  <view class="cu-progress round sm striped">
     <view class="bg-blue" style="width:{{current_scorll}}%;"></view>
-</view>
+  </view>
 
-<view>
-  <view class="choice_style solid-bottom text-lg text-left text-bold bg-white light padding">
-    {{current_index+1}}. {{current_question.title}}
-  </view>
-  <view class="imgGroup">
-    <image class="img1" mode="widthFix" src="{{current_question.question_pic}}"></image>
-  </view>
+  <view>
+    <view class="choice_style solid-bottom text-lg text-left text-bold bg-white light padding">
+      {{current_index+1}}. {{current_question.title}}
+    </view>
+    <view class="imgGroup">
+      <image class="img1" mode="widthFix" src="{{current_question.question_pic}}"></image>
+    </view>
   
-  <radio-group class="block"
-    wx:for="{{current_question.options}}"
-    wx:for-item="item1"
-    wx:for-index="i1"
-    wx:key="index1"
-    >
-    <view class="cu-form-group">
-			<view><text class="text-bold">{{item1.code}}.</text> 
-        <text class="choice_style padding-sm">{{item1.content}}</text>
-      </view>
-			<radio class='radio' value="item1" checked="{{item1.checked}}" data-index="{{i1}}" data-item="{{item1}}" bindtap="radioCheck"></radio>
-		</view>
-  </radio-group>
-</view>
-<button class="cu-btn block bg-blue margin-tb-lg df" bindtap="NextQuestion" wx:if="{{current_index<question_list_length-1}}">
-  下一题</button>
-<view class="cu-bar btn-group bg-white" wx:if="{{current_index==question_list_length-1}}">
-  <button class="cu-btn bg-green shadow-blur round" bindtap="SubmitChoice" disabled="{{!btnShow}}">提交答案</button>
+    <radio-group class="block"
+      wx:for="{{current_question.options}}"
+      wx:for-item="item1"
+      wx:for-index="i1"
+      wx:key="index1"
+      >
+      <view class="cu-form-group">
+			  <view><text class="text-bold">{{item1.code}}.</text> 
+          <text class="choice_style padding-sm">{{item1.content}}</text>
+        </view>
+			  <radio class='radio' value="item1" checked="{{item1.checked}}" data-index="{{i1}}" data-item="{{item1}}" bindtap="radioCheck"></radio>
+		  </view>
+    </radio-group>
+  </view>
+  <button class="cu-btn block bg-blue margin-tb-lg df" bindtap="NextQuestion" wx:if="{{current_index<question_list_length-1}}">
+    下一题</button>
+  <view class="cu-bar btn-group bg-white" wx:if="{{current_index==question_list_length-1}}">
+    <button class="cu-btn bg-green shadow-blur round" bindtap="SubmitChoice" disabled="{{!btnShow}}">提交答案</button>
+  </view>
+
+  <!-- 渲染结果 -->
+  <view class="solid-bottom text-lg text-left text-bold bg-white light padding" wx:if="{{show_result}}">
+    答题结果
+  </view>
+  <view class="solid-bottom text-lg text-left text-bold bg-white light padding" wx:if="{{show_result}}"
+  wx:for="{{result_list}}"
+  wx:for-index="i2"
+  >
+    {{i2+1}}. <image class="img" mode="widthFix" src="{{result_list[i2].status?'../../icon/t.png':'../../icon/f.png'}}"></image>
+  </view>
+  <view class="solid-bottom text-lg text-left text-bold bg-white light padding" wx:if="{{show_result}}">
+  正确率
+  </view>
+  <view class="padding bg-white" wx:if="{{show_result}}">
+	  <view class="cu-progress round striped">
+      <view class="bg-green" style="width:{{score}}%;">{{score}}%</view>
+	  </view>
+  </view>
 </view>
 
-<!-- 渲染结果 -->
-<view class="solid-bottom text-lg text-left text-bold bg-white light padding" wx:if="{{show_result}}">
-  答题结果
-</view>
-<view class="solid-bottom text-lg text-left text-bold bg-white light padding" wx:if="{{show_result}}"
- wx:for="{{result_list}}"
- wx:for-index="i2"
- >
-  {{i2+1}}. <image class="img" mode="widthFix" src="{{result_list[i2].status?'../../icon/t.png':'../../icon/f.png'}}"></image>
-</view>
-<view class="solid-bottom text-lg text-left text-bold bg-white light padding" wx:if="{{show_result}}">
-  正确率
-</view>
-<view class="padding bg-white" wx:if="{{show_result}}">
-	<view class="cu-progress round striped">
-    <view class="bg-green" style="width:{{score}}%;">{{score}}%</view>
-	</view>
+<view class="solid-bottom text-lg text-center text-bold bg-white light padding" wx:if="{{blankShow}}">
+  资料尚未发布
 </view>
 
 

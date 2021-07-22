@@ -129,6 +129,15 @@ Page({
     }   
   },
 
+  backToHome(){
+    setTimeout(()=>{
+      wx.setStorageSync('PageCur', 'FrontPage')
+      wx.reLaunch({
+        url: '../student_page/student_page',
+      })
+    }, 100)
+  },
+
   //点击提交表单
   onSubmit(res){
     var s_sms = this.data.s_sms;
@@ -158,12 +167,17 @@ Page({
           icon: "none",
           duration: 2000
         })
-        setTimeout(res => {
-          wx.setStorageSync('PageCur', 'User')
-          wx.reLaunch({
-            url: '../student_page/student_page',
-          })
-        }, 1500)
+        wx.navigateBack({
+          delta: 2,
+          fail: function(res) {
+            wx.setStorageSync('PageCur', 'User')
+            setTimeout(() => {
+              wx.reLaunch({
+                url: '../student_page/student_page',
+              })
+            }, 100);
+          },
+        })
       })
     }
   }else{

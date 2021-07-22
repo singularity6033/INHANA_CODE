@@ -3,14 +3,11 @@ const cloud = require('wx-server-sdk')
 
 cloud.init()
 const db = cloud.database()
-const _ = db.command
-
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  //返回排序后的结果
-  const {Class} = event
-  return await db.collection('online_lecture_info').orderBy('order', 'asc').where({
-    Class
+  var {index_name} = event
+  return await db.collection('download_files').where({
+    title: index_name
   }).get()
 }

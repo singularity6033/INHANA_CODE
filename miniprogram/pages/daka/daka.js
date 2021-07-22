@@ -15,6 +15,16 @@ Component({
   },
 
   methods: {
+
+    backToHome(){
+      setTimeout(()=>{
+        wx.setStorageSync('PageCur', 'FrontPage')
+        wx.reLaunch({
+          url: '../student_page/student_page',
+        })
+      }, 100)
+    },
+
     getNewsData(){
       wx.cloud.callFunction({
         name:"get_live_lecture_info"

@@ -16,8 +16,17 @@ Page({
   cardSwiper(e) {
     // console.log(e.detail.current)
     this.setData({
-      cardCur:e.detail.current
+      cardCur: e.detail.current
     })
+  },
+
+  backToHome(){
+    setTimeout(()=>{
+      wx.setStorageSync('PageCur', 'FrontPage')
+      wx.reLaunch({
+        url: '../student_page/student_page',
+      })
+    }, 100)
   },
 
   tabSelect(e) {
@@ -63,7 +72,30 @@ Page({
       })
       wx.setStorageSync('PageCur', 'User')
       setTimeout(() => {
-        wx.reLaunch({
+        wx.navigateTo({
+          url: '../student_page/student_page',
+        })
+      }, 1500);
+    }
+  },
+
+  ShowTrainingDetail(e){
+    if(app.globalData.userInfo){
+      var index = e.currentTarget.dataset.index;
+      console.log(index)
+      wx.setStorageSync('index_name', this.data.gradingTrainingLecture[index].title)
+      wx.navigateTo({
+        url: '../grading_train_content/grading_train_content'
+      })
+    }else{
+      wx.showToast({
+        title: '请先登录',
+        icon:'error',
+        duration: 1500
+      })
+      wx.setStorageSync('PageCur', 'User')
+      setTimeout(() => {
+        wx.navigateTo({
           url: '../student_page/student_page',
         })
       }, 1500);

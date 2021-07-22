@@ -10,6 +10,15 @@ Page({
     error: ''
   },
 
+  backToHome(){
+    setTimeout(()=>{
+      wx.setStorageSync('PageCur', 'FrontPage')
+      wx.reLaunch({
+        url: '../student_page/student_page',
+      })
+    }, 100)
+  },
+
   //播放开始
   Play(){
     this.data.innerAudioContext.src = this.data.audio_record.audioUrl;

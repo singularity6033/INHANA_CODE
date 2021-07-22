@@ -1,5 +1,8 @@
 <cu-custom bgColor="bg-gradual-pink" isBack='{{false}}'>
   <view slot="content">INHANA英翰语言戏剧</view>
+  <view slot="backText" class="margin-lg text-xl" bindtap="backToHome">
+    <text class="cuIcon-home"></text>
+  </view>
 </cu-custom>
 <wxs src="../../wxs/common.wxs" module="common"/>
 
@@ -74,13 +77,13 @@
         <image src="{{item.cover_url}}" mode="widthFix"></image>
       <view class="cu-tag bg-blue">最新</view>
       <view class="cu-bar bg-shadeBottom">
-        <text class="text-cut text-lg">{{item.title}}</text>
+        <text class="text-cut text-lg text-bold">{{item.title}}</text>
       </view>
     </view>
     <view class="cu-list menu-avatar">
       <view class="cu-item">
         <view class="flex-sub padding">
-          <view class="text-blue text-bold text-shadow text-lg padding-bottom-xs">点击查看详情</view>
+          <view class="text-blue text-shadow text-lg padding-bottom-xs">点击查看详情</view>
           <view class="text-gray text-lg flex justify-between">
             发布于{{common.timesFun(item.posttime)}}前
             <view class="text-red text-price text-lg">{{item.price}}</view>

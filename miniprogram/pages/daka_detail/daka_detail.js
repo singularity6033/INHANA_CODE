@@ -12,6 +12,15 @@ Page({
     isShow2:false
   },
 
+  backToHome(){
+    setTimeout(()=>{
+      wx.setStorageSync('PageCur', 'FrontPage')
+      wx.reLaunch({
+        url: '../student_page/student_page',
+      })
+    }, 100)
+  },
+
   download(e){
     if(app.globalData.userInfo){
       if(e.currentTarget.dataset.item=="课前资料"){
@@ -30,7 +39,7 @@ Page({
       })
       wx.setStorageSync('PageCur', 'User')
       setTimeout(() => {
-        wx.reLaunch({
+        wx.navigateTo({
           url: '../student_page/student_page',
         })
       }, 1500);
@@ -51,7 +60,7 @@ Page({
       })
       wx.setStorageSync('PageCur', 'User')
       setTimeout(() => {
-        wx.reLaunch({
+        wx.navigateTo({
           url: '../student_page/student_page',
         })
       }, 1500);
@@ -72,7 +81,7 @@ Page({
       })
       wx.setStorageSync('PageCur', 'User')
       setTimeout(() => {
-        wx.reLaunch({
+        wx.navigateTo({
           url: '../student_page/student_page',
         })
       }, 1500);
@@ -93,7 +102,7 @@ Page({
       })
       wx.setStorageSync('PageCur', 'User')
       setTimeout(() => {
-        wx.reLaunch({
+        wx.navigateTo({
           url: '../student_page/student_page',
         })
       }, 1500);
@@ -127,7 +136,7 @@ Page({
       })
       wx.setStorageSync('PageCur', 'User')
       setTimeout(() => {
-        wx.reLaunch({
+        wx.navigateTo({
           url: '../student_page/student_page',
         })
       }, 1500);

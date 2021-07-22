@@ -8,6 +8,14 @@ Page({
     ChoiceMistakeList:[]
   },
 
+  backToHome(){
+    setTimeout(()=>{
+      wx.setStorageSync('PageCur', 'FrontPage')
+      wx.reLaunch({
+        url: '../student_page/student_page',
+      })
+    }, 100)
+  },
   /**
    * 生命周期函数--监听页面加载
    */

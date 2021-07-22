@@ -7,6 +7,15 @@ Page({
     dataone:{}
   },
 
+  backToHome(){
+    setTimeout(()=>{
+      wx.setStorageSync('PageCur', 'FrontPage')
+      wx.reLaunch({
+        url: '../student_page/student_page',
+      })
+    }, 100)
+  },
+
   previewImage(e){
     var cur=e.target.dataset.src;//获取本地一张图片链接
     console.log(e)

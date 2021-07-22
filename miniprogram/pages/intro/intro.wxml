@@ -1,9 +1,0 @@
-<cu-custom bgColor="bg-gradual-pink" isBack='{{true}}'>
-  <view slot="content">INHANA英翰语言戏剧</view>
-</cu-custom>
-
-<view class="padding-lg"></view>
-<view class="imgGroup"
- wx:for="{{introList}}">
-  <image class="img1" mode="widthFix" src="{{item.intro_url}}" data-src="{{item.intro_url}}" bindtap="preview_swiper_img"></image>
-</view>

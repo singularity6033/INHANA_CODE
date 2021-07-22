@@ -8,18 +8,27 @@ var QuestionName="";
 var item_index="";
 Page({
   data: {
-    question_choice_list:[],//存放选择题数组
-    question_list_length:"",
-    current_question:[],
-    current_index:0,
-    current_scorll:10,
-    result_list:[],
-    score:"",
-    show_result:false,
-    userInfo:[],
-    btnShow:true
+    question_choice_list: [],//存放选择题数组
+    question_list_length: "",
+    current_question: [],
+    current_index: 0,
+    current_scorll: 10,
+    result_list: [],
+    score: "",
+    show_result: false,
+    userInfo: [],
+    btnShow: true,
   },
-  
+
+  backToHome(){
+    setTimeout(()=>{
+      wx.setStorageSync('PageCur', 'FrontPage')
+      wx.reLaunch({
+        url: '../student_page/student_page',
+      })
+    }, 100)
+  },
+
   //选项点击事件
   radioCheck(e){
     //选项索引
@@ -175,11 +184,21 @@ Page({
    */
   onLoad: function (options) {
     one_choice_question = wx.getStorageSync('one_choice_question')
-    this.setData({
-      question_choice_list:one_choice_question,
-      current_question:one_choice_question[0],
-      question_list_length:one_choice_question.length
-    })
+    if(one_choice_question.length==0){
+      this.setData({
+        blankShow: true,
+        question_choice_list:one_choice_question,
+        current_question:one_choice_question[0],
+        question_list_length:one_choice_question.length
+      })
+    }else{
+      this.setData({
+        blankShow: false,
+        question_choice_list:one_choice_question,
+        current_question:one_choice_question[0],
+        question_list_length:one_choice_question.length
+      })
+    }
     result_question=[];
     result_status=[];
     this.getUser();

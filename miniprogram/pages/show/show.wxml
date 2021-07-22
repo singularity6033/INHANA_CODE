@@ -1,6 +1,9 @@
 <wxs src="../../wxs/common.wxs" module="common"></wxs>
 <cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
   <view slot="content">近期活动</view>
+  <view slot="backText" class="margin-lg text-xl" bindtap="backToHome">
+    <text class="cuIcon-home"></text>
+  </view>
 </cu-custom>
 
 <view class="container">

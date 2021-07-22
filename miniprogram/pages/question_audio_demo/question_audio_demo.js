@@ -14,13 +14,33 @@ Page({
     })
   },
 
+  backToHome(){
+    setTimeout(()=>{
+      wx.setStorageSync('PageCur', 'FrontPage')
+      wx.reLaunch({
+        url: '../student_page/student_page',
+      })
+    }, 100)
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options){
     one_audio_question = wx.getStorageSync('one_audio_question')
+    if(one_audio_question.length==0){
+      this.setData({
+        blankShow: true,
+        one_audio_question:one_audio_question
+      })
+    }else{
+      this.setData({
+        blankShow: false,
+        one_audio_question:one_audio_question
+      })
+    }
     this.setData({
-      one_audio_question:one_audio_question
+      
     })
     // this.getAudioQuestion(QuestionName)
   },

@@ -1,2 +1,42 @@
-<!--pages/grading_train_content/grading_train_content.wxml-->
-<text>pages/grading_train_content/grading_train_content.wxml</text>
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+	<view slot="content">INHANA英翰语言戏剧</view>
+	<view slot="backText" class="margin-lg text-xl" bindtap="backToHome">
+    <text class="cuIcon-home"></text>
+  </view>
+</cu-custom>
+
+<view class="cu-bar margin-sm bg-white">
+		<view class="action">
+			<text class="text-lg text-bold">考级培训课程列表</text>
+			<text class="text-Abc text-gray self-end margin-left-sm">LAMDA Training Lectures List</text>
+		</view>
+</view>
+
+<view class="btn-group margin-tb-lg text-center padding">
+  <button class="cu-btn lg round bg-gradual-blue margin-xs" bindtap="ToLectureList">教学视频</button>
+</view>
+
+<view class="cu-bar margin-sm bg-white">
+		<view class="action">
+			<text class="text-lg text-bold">课程练习</text>
+			<text class="text-Abc text-gray self-end margin-left-sm">Practices</text>
+		</view>
+</view>
+  
+<view class="btn btn-group margin-tb-lg text-center padding">
+  <button class="cu-btn lg round bg-gradual-green margin-xs" bindtap="choice">选择题</button>
+  <button class="cu-btn lg round bg-gradual-green margin-xs" bindtap="audio">朗读练习</button>
+</view>
+
+<view class="cu-bar margin-sm bg-white">
+	<view class="action">
+		<text class="text-lg text-bold">下载专区</text>
+		<text class="text-Abc text-gray self-end margin-left-sm">Downloads</text>
+	</view>
+</view>
+  
+  <view class="btn-group margin-tb-lg text-center padding">
+    <button class="cu-btn lg round bg-gradual-orange margin-xs" bindtap="ToFileList" data-item="课前资料">课程资料</button>
+  </view>
+
+

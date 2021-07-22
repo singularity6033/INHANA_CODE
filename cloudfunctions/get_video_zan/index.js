@@ -9,7 +9,7 @@ const _ =db.command;
 exports.main = async (event, context) => {
   const openid = cloud.getWXContext().OPENID
   const {video_name} = event
-  var res = await db.collection("lecture_detail").where({
+  var res = await db.collection("video_detail").where({
     name: video_name,
     zanGroup: _.all([openid])
     }).count()

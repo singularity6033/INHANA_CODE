@@ -8,6 +8,15 @@ Page({
     DownloadList:[]
   },
 
+  backToHome(){
+    setTimeout(()=>{
+      wx.setStorageSync('PageCur', 'FrontPage')
+      wx.reLaunch({
+        url: '../student_page/student_page',
+      })
+    }, 100)
+  },
+
   download(e){
     var index = e.currentTarget.dataset.index
     wx.showLoading({

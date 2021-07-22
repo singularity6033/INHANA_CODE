@@ -81,7 +81,7 @@ Component({
         })
         wx.setStorageSync('PageCur', 'User')
         setTimeout(() => {
-          wx.reLaunch({
+          wx.navigateTo({
             url: '../student_page/student_page',
           })
         }, 1500);

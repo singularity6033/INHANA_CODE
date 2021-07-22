@@ -14,6 +14,15 @@ Page({
     SelectedDate:""
   },
 
+  backToHome(){
+    setTimeout(()=>{
+      wx.setStorageSync('PageCur', 'FrontPage')
+      wx.reLaunch({
+        url: '../student_page/student_page',
+      })
+    }, 100)
+  },
+
   //监听输入事件
   IptChanged(res){
     console.log(res)

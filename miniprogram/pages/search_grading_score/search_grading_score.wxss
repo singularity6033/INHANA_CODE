@@ -1,0 +1,7 @@
+.img {
+  height: 300rpx;
+  background-image: url('https://696e-inhana-cloud-1g9obu9p408701c5-1305238456.tcb.qcloud.la/43da2a2fed943ee4f1c16a9f85bf5c8.jpg?sign=b87a732e5b064a95f1e5052439c5c44d&t=1626838541');
+  background-size:100% 100%;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}

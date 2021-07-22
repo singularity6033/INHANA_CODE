@@ -1,5 +1,8 @@
 <cu-custom bgColor="bg-gradual-pink" isBack='{{true}}'>
   <view slot="content">INHANA英翰语言戏剧</view>
+  <view slot="backText" class="margin-lg text-xl" bindtap="backToHome">
+    <text class="cuIcon-home"></text>
+  </view>
 </cu-custom>
 <view 
   wx:for="{{final_drama_showcase_review_info}}"

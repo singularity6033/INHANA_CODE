@@ -1,5 +1,8 @@
 <cu-custom bgColor="bg-gradual-pink" isBack='{{true}}'>
   <view slot="content">INHANA语言戏剧教育</view>
+  <view slot="backText" class="margin-lg text-xl" bindtap="backToHome">
+    <text class="cuIcon-home"></text>
+  </view>
 </cu-custom>
 
 <view class="solid-bottom text-df text-center text-black text-bold bg-white light padding">

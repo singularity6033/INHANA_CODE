@@ -6,8 +6,8 @@ const db=cloud.database()
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  var {LectureName}=event
-  return await db.collection("lecture_detail").orderBy('order', 'asc').where({
-    list_name: LectureName
+  var {index_name} = event
+  return await db.collection("video_detail").orderBy('order', 'asc').where({
+    list_name: index_name
   }).get()
 }

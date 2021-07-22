@@ -17,6 +17,15 @@ Page({
     })
   },
 
+  backToHome(){
+    setTimeout(()=>{
+      wx.setStorageSync('PageCur', 'FrontPage')
+      wx.reLaunch({
+        url: '../student_page/student_page',
+      })
+    }, 100)
+  },
+
   ReviewMistakes(e){
     var current_index = e.currentTarget.dataset.index
     console.log(current_index)

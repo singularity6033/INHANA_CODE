@@ -7,6 +7,15 @@ Page({
     VideoSrc:[],
   },
 
+  backToHome(){
+    setTimeout(()=>{
+      wx.setStorageSync('PageCur', 'FrontPage')
+      wx.reLaunch({
+        url: '../student_page/student_page',
+      })
+    }, 100)
+  },
+
   //更改文章点赞信息
   pushZan(){
     var video_name = this.data.VideoSrc.name
