@@ -745,6 +745,13 @@ radio.white[checked] .wx-radio-input {
 	width: 31.5%;
 }
 
+.cu-btn.xs {
+	padding: 0 20rpx;
+	font-size: 28rpx;
+	height: 65rpx;
+	width: 15%;
+}
+
 .cu-btn.lg {
 	padding: 0 40rpx;
 	font-size: 32rpx;

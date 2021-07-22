@@ -4,10 +4,10 @@ Page({
     live_record:[]
   },
 
-  getLiveRecord(question_name){
+  getLiveRecord(live_lecture_name){
     wx.cloud.callFunction({
       name:"get_live_record",
-      data:{question_name}
+      data: {live_lecture_name}
     }).then(res=>{
       //初始化
       var live_num = {}
@@ -34,8 +34,8 @@ Page({
   },
 
   onLoad: function (options) {
-    var question_name = wx.getStorageSync('question_name')
-    this.getLiveRecord(question_name)
+    var live_lecture_name = wx.getStorageSync('live_lecture_name')
+    this.getLiveRecord(live_lecture_name)
   },
 
   /**

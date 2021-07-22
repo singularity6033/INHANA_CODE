@@ -7,7 +7,7 @@
   wx:for="{{newsList}}"
   wx:key="index"
   >
-  <view class="cu-item shadow" data-src="{{item.navigator_url}}" bindtap="view_detail">
+  <view class="cu-item shadow" data-src="{{item.navigator_url}}" data-index="{{index}}" bindtap="view_detail">
     <view class="title">
       <view class="text-cut">{{item.title}}</view>
     </view>

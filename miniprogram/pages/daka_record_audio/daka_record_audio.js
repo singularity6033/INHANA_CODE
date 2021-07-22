@@ -1,4 +1,6 @@
 import common from "../../js/common.js";
+var id = "";
+var app = getApp();
 Page({
 
   data: {
@@ -7,7 +9,11 @@ Page({
     isplay: false, //是否默认播放
     myAudioDuration: '', // 时间
     myAudioCurrent: '',  // 当前播放进度
-    error: ''
+    error: '',
+    InputBottom: 0,
+    iptVal: "",
+    btnShow: false,
+    pingData: []
   },
 
   backToHome(){
@@ -17,6 +23,71 @@ Page({
         url: '../student_page/student_page',
       })
     }, 100)
+  },
+
+  IptChanged(res){
+    console.log(res)
+    if(res.detail.value.length){
+      this.setData({
+        btnShow: true
+      })
+    }else{
+      this.setData({
+        btnShow: false
+      })
+    }
+  },
+
+  InputFocus(e) {
+    this.setData({
+      InputBottom: e.detail.height
+    })
+  },
+
+  InputBlur(e) {
+    this.setData({
+      InputBottom: 0
+    })
+  },
+
+   //获取评论
+  getPing(id) {
+    wx.cloud.callFunction({
+      name: "get_ping",
+      data: {
+        id
+      }
+    }).then(res => {
+      // console.log(res)
+      this.setData({
+        pingData: res.result.data
+      })
+    })
+  },
+
+  onSubmit(res){
+    wx.showLoading({
+      title: '数据加载中...',
+    })
+    var content = res.detail.value.content;
+    var userInfo = app.globalData.userInfo;
+    var question_name = this.data.audio_record.question_name;
+    wx.cloud.callFunction({
+      name: "add_ping",
+      data: {
+        id,
+        content,
+        question_name,
+        userInfo
+      }
+      }).then(res => {
+        wx.hideLoading()
+        this.setData({
+          iptVal: "",
+          btnShow: false
+        })
+        this.getPing(id);
+      })
   },
 
   //播放开始
@@ -67,7 +138,8 @@ Page({
       innerAudioContext: wx.createInnerAudioContext(),
       audio_record
     })
-   
+    id = audio_record._id
+    this.getPing(id)
   },
 
   /**

@@ -1,42 +1,42 @@
-// pages/admin_page/admin_page.js
 Component({
   options: {
     addGlobalClass: true,
   },
 
   data: {
-    UserInfoList:[],
-    SelectStatus:false
+    AudioRecord: [],
+    SelectStatus: false
   },
 
   attached: function () {
-    this.getUserInfo()
+    this.getAudioRecord()
   },
   
   methods: {
-    getUserInfo(school=""){
+
+    getAudioRecord(question_name=""){
       wx.cloud.callFunction({
-        name:"get_userInfo_total",
-        data:{school}
+        name: "get_audio_record_total",
+        data: {question_name}
       }).then(res=>{
         this.setData({
-          UserInfoList:res.result.data,
-          user_num: Object.keys(res.result.data).length
+          AudioRecord: res.result.data
         })
       })
     },
   
     detail_info(e){
-      var index = e.currentTarget.dataset.index
-      wx.setStorageSync('openid_record', this.data.UserInfoList[index].openid)
+      var current_index = e.currentTarget.dataset.index
+      console.log(current_index)
+      var current_audio_record = this.data.AudioRecord[current_index]
+      wx.setStorageSync('current_audio_record', current_audio_record)
       wx.navigateTo({
-        url: '../admin_daka_record/admin_daka_record',
-      })
+        url: '../daka_record_audio/daka_record_audio'
+      }) 
     },
 
     Iptchanged(e){
-      // console.log(e.detail.value)
-      this.getUserInfo(e.detail.value)
+      this.getAudioRecord(e.detail.value)
     }
   }
 })

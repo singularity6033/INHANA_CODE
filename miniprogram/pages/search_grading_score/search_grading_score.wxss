@@ -1,7 +1,34 @@
 .img {
-  height: 300rpx;
-  background-image: url('https://696e-inhana-cloud-1g9obu9p408701c5-1305238456.tcb.qcloud.la/43da2a2fed943ee4f1c16a9f85bf5c8.jpg?sign=b87a732e5b064a95f1e5052439c5c44d&t=1626838541');
-  background-size:100% 100%;
+  height: 400rpx;
+  background-image: url('https://696e-inhana-cloud-1g9obu9p408701c5-1305238456.tcb.qcloud.la/LAMDA%E8%80%83%E7%BA%A7%E6%88%90%E7%BB%A9/bg1.jpg?sign=8b96bda602f0e404ce266c8a8b5f5f93&t=1626924685');
+  background-size: 100% 100%;
   background-repeat: no-repeat;
-  background-position: center bottom;
+  background-position: center;
+}
+
+.idxCon {
+  padding: 10rpx 20rpx;
+}
+.idxCon .row {
+  display: flex;
+  border-bottom: 1px solid #eeeeee;
+  line-height: 180%;
+  padding: 20rpx 0;
+  height: 50%;
+  justify-content: space-between;
+}
+.idxCon .row .rowTxt { 
+  height: 100%;
+  width: 100%;
+}
+.idxCon .row .rowTxt .title {
+  font-size: 32rpx;
+  margin-bottom:20rpx;
+  margin-left:20rpx;
+  height: 100rpx;
+}
+.idxCon .row .rowTxt .info {
+  font-size: 28rpx;
+  margin-left: 10rpx;
+  columns: #999999;
 }

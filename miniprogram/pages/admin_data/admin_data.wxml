@@ -3,7 +3,7 @@
 </cu-custom>
 <wxs src="../../wxs/common.wxs" module="common"/>
 
-<view class="idxCon" wx:for="{{newsList}}" wx:key="index" >
+<view class="idxCon" wx:for="{{LiveLectureList}}" wx:key="index" >
     <view class="row cu-bar bg-white margin-top-sm" bindtap="ShowNewsOne" data-index="{{index}}" wx:if="{{item.visible}}">
         <view class="rowTxt">
           <view class="title text-black text-bold text-left">{{item.title}}</view>

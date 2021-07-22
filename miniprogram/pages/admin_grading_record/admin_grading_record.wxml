@@ -1,19 +1,21 @@
 <cu-custom bgColor="bg-gradual-pink" isBack='{{false}}'>
   <view slot="content">INHANA语言戏剧教育</view>
 </cu-custom>
+
+<view class="cu-bar search bg-white">
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" bindinput="Iptchanged" placeholder="按考生姓名（证书上）搜索" confirm-type="search"></input>
+  </view>
+</view>
+
 <view class="idxCon" wx:for="{{UserInfoGradingList}}" wx:key="index">
     <view class="row cu-bar bg-white margin-top-sm">
         <view class="rowTxt">
-          <view class="info text-gray"><text selectable="true" class="text-black">考生中文名：</text><text selectable="true">{{item.name_CN}}</text></view>
-          <view class="info text-gray"><text selectable="true" class="text-black">考生英文名：</text><text selectable="true">{{item.name_EN}}</text></view>
+          <view class="info text-gray"><text selectable="true" class="text-black">考生姓名：</text><text selectable="true">{{item.name}}</text></view>
           <view class="info text-gray"><text selectable="true" class="text-black">考生学校：</text><text selectable="true">{{item.school}}</text></view>
           <view class="info text-gray"><text selectable="true" class="text-black">考点：</text><text selectable="true">{{item.date}}</text></view>
-          <view class="info text-gray"><text selectable="true" class="text-black">商品名称：</text><text selectable="true">{{item.item_name}}</text></view>
-          <view class="info text-gray"><text selectable="true" class="text-black">商品类别：</text><text selectable="true">{{item.item_class}}</text></view>
-          <view class="info text-gray"><text selectable="true" class="text-black">商品价格：</text><text selectable="true" class="text-price"><text selectable="true">{{item.item_price}}</text></text>
-          </view>
-          <view class="info text-gray"><text selectable="true" class="text-black">购买时间：</text><text selectable="true">{{item.payTime}}</text></view>
-          <view class="info text-gray"><text selectable="true" class="text-black">订单号：</text><text selectable="true">{{item.payOrder}}</text></view>
+          <view class="info text-gray"><text selectable="true" class="text-black">考级科目：</text><text selectable="true">{{item.item_name}}</text></view>
         </view>
   </view> 
 </view>

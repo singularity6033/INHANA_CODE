@@ -26,7 +26,7 @@
 <view class="cu-modal {{modalName=='Image'?'show':''}}">
   <view class="cu-dialog">
     <view class="bg-img img" data-src="{{score}}" bindtap="preview_swiper_img" wx:if="{{showScore}}">
-      <view class="cu-bar text-blod justify-end text-red">
+      <view class="cu-bar text-blod justify-end text-white">
         <view class="action" bindtap="hideModal">
           <text class="cuIcon-close "></text>
         </view>
@@ -39,30 +39,8 @@
 
     <view class="cu-bar bg-white justify-center">
       <view class="action">
-        <button class="cu-btn lg bg-gradual-green" bindtap="hideModal">确定</button>
+        <button class="cu-btn bg-gradual-green" bindtap="hideModal">返回</button>
       </view>
     </view>
   </view>
 </view>
-
-<!-- <view class="cu-modal {{modalName=='DialogModal'?'show':''}}">
-  <view class="cu-dialog">
-    <view class="cu-bar bg-white justify-end">
-      <view class="content">LAMDA考级成绩</view>
-      <view class="action" bindtap="hideModal">
-        <text class="cuIcon-close text-red"></text>
-      </view>
-    </view>
-    <view class="imgGroup">
-      <image class="img1 padding-xl" mode="widthFix" src="cloud://inhana-cloud-1g9obu9p408701c5.696e-inhana-cloud-1g9obu9p408701c5-1305238456/点击查看.png" data-src="{{score}}" bindtap="preview_swiper_img" wx:if="{{showScore}}"></image>
-    </view>
-
-    <view class="cu-bar bg-white justify-center">
-      <view class="action">
-        <button class="cu-btn bg-green" bindtap="hideModal">确定</button>
-      </view>
-    </view>
-  </view>
-</view> -->
-
-<!-- {{name}}同学的考试成绩为 -->

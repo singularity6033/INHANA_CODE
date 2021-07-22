@@ -1,25 +1,24 @@
 <cu-custom bgColor="bg-gradual-pink" isBack='{{false}}'>
   <view slot="content">INHANA语言戏剧教育</view>
 </cu-custom>
+<wxs src="../../wxs/common.wxs" module="common"/>
+
 <view class="cu-bar search bg-white">
   <view class="search-form round">
     <text class="cuIcon-search"></text>
-    <input type="text" bindinput="Iptchanged" placeholder="按学校名搜索" confirm-type="search"></input>
+    <input type="text" bindinput="Iptchanged" placeholder="按作业题目搜索" confirm-type="search"></input>
   </view>
 </view>
 
-<view class="idxCon" wx:for="{{UserInfoList}}" wx:key="index">
+<view class="idxCon" wx:for="{{AudioRecord}}" wx:key="index">
     <view class="row cu-bar bg-white margin-top-sm" bindtap="detail_info" data-index="{{index}}">
         <view class="rowTxt">
-          <view class="info text-left">学校：{{item.school}}</view>
-          <view class="info text-left">姓名：{{item.name}}</view>
-          <view class="info text-left">性别：{{item.gender}}</view>
-          <view class="info text-left">年级：{{item.grade}}</view>
-          <view class="info text-left">联系方式：{{item.phone}}</view>
+          <view class="info text-left">题目：{{item.question_name}}</view>
+          <view class="info text-left">姓名：{{item.userInfo[0].name}}</view>
+          <view class="info text-left">学校：{{item.userInfo[0].school}}</view>
+          <view class="info text-left">自动评分：{{item.review}}</view>
+          <view class="info text-left">提交时间：{{common.myDate(item.posttime,0)}}</view>
         </view>
   </view> 
-</view>
-<view class="solid-bottom text-sm text-center text-black bg-white light padding margin-sm">
-  共有{{user_num}}条记录
 </view>
 <view class="tabbar_style"></view>

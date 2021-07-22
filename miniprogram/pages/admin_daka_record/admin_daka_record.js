@@ -1,4 +1,3 @@
-// pages/daka_record/daka_record.js
 var choice_mistake_list=[];
 var audio_record_list=[];
 var openid_record="";

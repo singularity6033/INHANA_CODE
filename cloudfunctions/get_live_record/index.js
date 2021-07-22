@@ -6,10 +6,10 @@ const db = cloud.database()
 const MAX_LIMIT = 100
 
 exports.main = async (event, context) => {
-  const {question_name} = event
+  const {live_lecture_name} = event
   // 先取出集合记录总数
   const countResult = await db.collection("live_record").where({
-    live_title:question_name
+    live_title: live_lecture_name
   }).count()
   const total = countResult.total
   // 计算需分几次取
@@ -19,7 +19,7 @@ exports.main = async (event, context) => {
   for (let i = 0; i < batchTimes; i++) {
     const promise = db.collection('live_record').skip(i * MAX_LIMIT).limit(MAX_LIMIT)
     .where({
-      live_title:question_name
+      live_title: live_lecture_name
     }).get()
     tasks.push(promise)
   }

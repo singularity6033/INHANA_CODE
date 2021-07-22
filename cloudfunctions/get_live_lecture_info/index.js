@@ -5,8 +5,7 @@ cloud.init()
 const db=cloud.database()
 // 云函数入口函数
 exports.main = async (event, context) => {
-  const openid = cloud.getWXContext().OPENID
-  return await db.collection("show_activities")
+  return await db.collection("live_lecture_info")
   .orderBy("start_time","asc")
   .get()
 }

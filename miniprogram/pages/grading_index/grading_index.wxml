@@ -18,7 +18,7 @@
       </swiper-item>
   </swiper>
 
-  <view class="cu-list grid col-3 margin-sm">
+  <view class="cu-list grid col-2 margin-sm">
 	  <view class="cu-item">
       <navigator url='../grading_test_home/grading_test_home'>
         <view class="cuIcon-shop text-red"></view>
@@ -42,13 +42,12 @@
       </navigator>
     </view>
     
-    <!-- <view class="cu-item">
-      <navigator>
-        <view class="cuIcon-news text-red"></view>
-        <text class="text-lg test-black text-bold">相关活动</text>
-        <text class="text-lg test-black text-bold">Activities</text>
+    <view class="cu-item">
+      <navigator url='../search_grading_score/search_grading_score'>
+        <view class="cuIcon-search text-red"></view>
+        <text class="text-lg test-black text-bold">成绩查询</text>
       </navigator>
-	  </view> -->
+	  </view>
  </view>
    
   <view class="imgGroup">

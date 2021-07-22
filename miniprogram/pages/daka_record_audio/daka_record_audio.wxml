@@ -4,10 +4,9 @@
     <text class="cuIcon-home"></text>
   </view>
 </cu-custom>
+<wxs src="../../wxs/common.wxs" module="common"/>
 
-
-
-<view class="solid-bottom text-lg text-center bg-white light padding">
+<view class="solid-bottom radius margin text-bold text-lg text-center bg-gray light padding">
   {{audio_record.question_name}}-我的音频
 </view>
 
@@ -30,3 +29,30 @@
     </view>
   </view>
 </view>
+
+<view class="solid-bottom radius margin text-bold padding text-lg text-center bg-gray light">
+  评论区
+</view>
+
+<form class="margin" bindsubmit="onSubmit">
+  <view class="cu-bar foot input {{InputBottom!=0?'cur':''}}" style="bottom:{{InputBottom}}px">
+    <input value="{{iptVal}}" class="solid line-gray text-black" bindinput="IptChanged" name="content" bindfocus="InputFocus" bindblur="InputBlur" adjust-position="{{false}}"
+      focus="{{false}}" maxlength="300" cursor-spacing="10" placeholder="  请输入内容..."></input>
+      <button class="cu-btn xs bg-gradual-green shadow radius" form-type="submit" disabled="{{!btnShow}}" type="primary">发送</button>
+  </view>
+</form>
+
+<view class="cu-chat" wx:for="{{pingData}}">
+  <view class="margin-left">{{item.userInfo.nickName}}</view>
+  <view class="cu-item">
+    <view class="cu-avatar radius" style="background-image:url({{item.userInfo.avatarUrl}});"></view>
+    <view class="main">
+      <view class="content bg-gradual-green shadow">
+        <text>{{item.content}}</text>
+      </view>
+    </view>
+    <view class="date ">{{common.myDate(item.posttime)}}</view>
+  </view>
+</view>
+
+<view class="padding-xl"></view>

@@ -48,11 +48,6 @@
           <text decode>&nbsp;&nbsp;&nbsp;></text>
         </button>
       </navigator>
-      <navigator class="visitorRow" url="../search_grading_score/search_grading_score">
-        <button style="width:100%" class="btn">我的考级
-          <text decode>&nbsp;&nbsp;&nbsp;></text>
-        </button>
-      </navigator>
       <view class="visitorRow">
         <button style="width:100%" class="btn" open-type="contact">{{content.contact}}
           <text decode>&nbsp;&nbsp;&nbsp;></text>

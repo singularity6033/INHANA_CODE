@@ -6,35 +6,52 @@ Page({
    * 页面的初始数据
    */
   data: {
-    pay_record:[]
+    pay_record: [],
   },
 
-  get_userInfo_grading(){
-    var pay_record = this.data.pay_record
+  get_grading_training_lecture_payment_record(){
     wx.cloud.callFunction({
-      name: "get_userInfo_grading",
+      name: "get_grading_training_lecture_payment_record",
     }).then(res=>{
-      for(var i=0;i<res.result.data.length;i++){
-        pay_record.push(res.result.data[i])
-      }
+      console.log(res)
       this.setData({
-        pay_record 
+        pay_record: res.result.data
       })
     })
   },
 
-  get_lecture_record(){
-    var pay_record = this.data.pay_record
+  get_offline_lecture_payment_record(){
     wx.cloud.callFunction({
-      name: "get_lecture_payment_record",
+      name: "get_offline_lecture_payment_record",
     }).then(res=>{
       console.log(res)
-      for(var i=0;i<res.result.data.length;i++){
-        pay_record.push(res.result.data[i])
-      }
       this.setData({
-        pay_record 
+        pay_record: res.result.data
       })
+    })
+  },
+
+  get_userInfo_grading(){
+    wx.cloud.callFunction({
+      name: "get_userInfo_grading",
+    }).then(res=>{
+      this.setData({
+        pay_record: res.result.data
+      })
+    })
+  },
+
+  tabSelect(e) {
+    if(e.currentTarget.dataset.id==0){
+      this.get_userInfo_grading()
+    }else if(e.currentTarget.dataset.id==1){
+      this.get_offline_lecture_payment_record()
+    }else{
+      this.get_grading_training_lecture_payment_record()
+    }
+    this.setData({
+      TabCur: e.currentTarget.dataset.id,
+      scrollLeft: (e.currentTarget.dataset.id-1)*60
     })
   },
 
@@ -52,7 +69,6 @@ Page({
    */
   onLoad: function (options) {
     this.get_userInfo_grading()
-    this.get_lecture_record()
   },
 
   /**

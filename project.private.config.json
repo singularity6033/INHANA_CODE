@@ -45,6 +45,18 @@
         {
           "name": "pages/grading_train_home/grading_train_home",
           "pathName": "pages/grading_train_home/grading_train_home",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/admin_daka/admin_daka",
+          "pathName": "pages/admin_daka/admin_daka",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/daka_record_audio/daka_record_audio",
+          "pathName": "pages/daka_record_audio/daka_record_audio",
           "scene": null
         }
       ]

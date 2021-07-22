@@ -1,4 +1,4 @@
-<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+<cu-custom bgColor="bg-gradual-blue" isBack="{{false}}">
   <view slot="content">INHANA英翰语言戏剧</view>
 </cu-custom>
 

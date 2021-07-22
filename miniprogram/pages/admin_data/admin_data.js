@@ -15,10 +15,10 @@ Component({
   methods: {
     getNewsData(){
       wx.cloud.callFunction({
-        name:"get_news"
+        name:"get_live_lecture_info"
       }).then(res=>{
         this.setData({
-          newsList:res.result.data
+          LiveLectureList: res.result.data
         })
       })
     },
@@ -26,7 +26,7 @@ Component({
     ShowNewsOne(e){
       console.log(e)
       index = e.currentTarget.dataset.index
-      wx.setStorageSync('question_name', this.data.newsList[index].title)
+      wx.setStorageSync('live_lecture_name', this.data.LiveLectureList[index].title)
       wx.navigateTo({
         url: '/pages/admin_data_detail/admin_data_detail',
       })

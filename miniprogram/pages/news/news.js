@@ -27,8 +27,16 @@ Component({
 
     view_detail(e){
       var webview = e.currentTarget.dataset.src
-      wx.navigateTo({  
-        url: '/pages/webview/webview?webview='+webview,
+      var index = e.currentTarget.dataset.index
+      var id = this.data.newsList[index]._id
+      wx.cloud.callFunction({
+        name: "add_news_read",
+        data: {id}
+      }).then(res=>{
+        console.log(res)
+        wx.navigateTo({  
+          url: '/pages/webview/webview?webview='+webview,
+        })
       })
     },
   },
