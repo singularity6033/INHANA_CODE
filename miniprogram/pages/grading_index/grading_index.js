@@ -1,10 +1,12 @@
-// pages/grading_index/grading_index.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    CustomBar: app.globalData.CustomBar,
+    list_name: [],
     swiperList:[],
     grading_intro_url: "",
     show:true,
@@ -18,6 +20,39 @@ Page({
         url: '../student_page/student_page',
       })
     }, 100)
+  },
+
+  showModal(e) {
+    this.setData({
+      modalName: e.currentTarget.dataset.target,
+      list_name:['考试科目','考试须知']
+    })
+  },
+
+  hideModal(e) {
+    this.setData({
+      modalName: null
+    })
+  },
+
+  switchTo(e){
+    var url = ''
+    if(e.currentTarget.dataset.item=='考试科目'){
+      url = '../grading_test_home/grading_test_home'
+    }else if(e.currentTarget.dataset.item=='考试须知'){
+      url = '../learning_resources/learning_resources'
+      wx.setStorageSync('learning_resources_type', '考试须知')
+    }
+    wx.navigateTo({
+      url
+    })
+  },
+
+  ToLearningResoures(){
+    wx.setStorageSync('learning_resources_type', '考试知识点视频')
+    wx.navigateTo({
+      url: '../learning_resources/learning_resources',
+    })
   },
 
   cardSwiper(e) {

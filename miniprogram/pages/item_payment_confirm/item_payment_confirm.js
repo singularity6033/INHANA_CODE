@@ -10,7 +10,8 @@ Page({
     userInfo: [],
     itemOne: [],
     payorder: {},
-    itemType: ''
+    itemType: '',
+    id: ""
   },
 
   backToHome(){
@@ -91,6 +92,7 @@ Page({
                 item_name: payorder.item_name,
                 item_class: payorder.item_class,
                 item_price: payorder.item_price,
+                id: this.data.id,
                 payOrder: payorder.OrderCode,
                 payTime: common.myDate(Math.round(new Date()),1),
                 itemType: this.data.itemType
@@ -123,8 +125,10 @@ Page({
   onLoad: function (options) {
     var itemOne = wx.getStorageSync('itemOne')
     var itemType = wx.getStorageSync('itemType')
+    var id = wx.getStorageSync('grading_register_id')
     this.getUser()
     this.setData({
+      id,
       itemOne,
       itemType
     })

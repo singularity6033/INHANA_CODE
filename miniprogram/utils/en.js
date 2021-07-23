@@ -10,6 +10,7 @@ let en = {
   login: 'Click To Login',
   contact: 'Customer Service',
   share: 'Share To Friends',
+  back: "Back",
   name: 'Name',
   chinese_name: "Chinese Name",
   english_name: "English Name",
@@ -19,7 +20,8 @@ let en = {
   birthday: "Birthday (YY/MM/DD)",
   birthday_clue: "For example: 2020.1.1",
   nationality: "Nationality",
-  test_center_and_date: "Choose Test Date and Test Center",
+  test_date: "Choose Exam Center",
+  test_session: "Choose Exam Session",
   edit: 'Edit Personal Information',
   confirm: 'Confirm',
   choose: "Choose",
@@ -48,8 +50,12 @@ let en = {
   class_name: 'Name',
   class_price: 'Price',
   pay_time: 'Payment Time',
-  order_number: 'Order Number'
-  // 
+  order_number: 'Order Number',
+  // search_grading_score
+  search_grading_title: "Transcript",
+  pin_search: "Enter PIN Code...",
+  search: "Search",
+  error_info: "无查询结果，请检查输入内容是否正确！", 
 }
 
 module.exports = {

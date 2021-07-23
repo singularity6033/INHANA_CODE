@@ -76,12 +76,20 @@
       <input bindinput="IptChanged" name="phone" placeholder="{{content.phone}}"></input>
     </view>
     <!-- picker -->
-    <view class="padding text-lg">{{content.test_center_and_date}}
+    <view class="padding text-lg">{{content.test_date}}
       <text class="text-red">*</text>
     </view>
     <view class="cu-form-group margin-bottom box">
       <picker mode="selector" range="{{date}}" value="{{index2}}" bindchange="datePicker">
         <view class="picker">{{content.choose}}：{{date[index2]}}</view>
+      </picker>
+    </view>
+    <view class="padding text-lg">{{content.test_session}}
+      <text class="text-red">*</text>
+    </view>
+    <view class="cu-form-group margin-bottom box">
+      <picker mode="selector" range="{{session}}" value="{{index3}}" bindchange="SessionPicker">
+        <view class="picker">{{content.choose}}：{{session[index3]}}</view>
       </picker>
     </view>
     <!-- button -->

@@ -4,7 +4,7 @@
 
 <view class="visitor" wx:if="{{userInfo}}">
   <navigator url="../update_login_info/update_login_info">
-    <view class="text-right edit">{{content.edit}} ></view>
+    <view class="text-right edit">中文|English ></view>
   </navigator>
   <view class="flex padding justify-center margin-top-xl">
     <view class="cu-avatar round lg" style="background-image:url({{userInfo.avatarUrl}});">

@@ -23,7 +23,7 @@ var sendMsg = async(item) =>{
       },
       templateId: 'swn5payd67W7ngcC_xCqBsxdKK_ntSeZ64Qq2jlKgnY',
     })
-    const remove = await db.collection('template_msg1').where({
+    const remove = await db.collection('template_msg_general').where({
       openid: item.openid
     }).remove()
 }
@@ -31,14 +31,14 @@ var sendMsg = async(item) =>{
 const MAX_LIMIT = 100
 exports.main = async (event, context) => {
   // 先取出集合记录总数
-  const countResult = await db.collection('template_msg1').count()
+  const countResult = await db.collection('template_msg_general').count()
   const total = countResult.total
   // 计算需分几次取
   const batchTimes = Math.ceil(total / 100)
   // 承载所有读操作的 promise 的数组
   const tasks = []
   for (let i = 0; i < batchTimes; i++) {
-    const promise = db.collection('template_msg1').skip(i * MAX_LIMIT).limit(MAX_LIMIT).get()
+    const promise = db.collection('template_msg_general').skip(i * MAX_LIMIT).limit(MAX_LIMIT).get()
     tasks.push(promise)
   }
   // 等待所有

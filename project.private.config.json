@@ -57,6 +57,18 @@
         {
           "name": "pages/daka_record_audio/daka_record_audio",
           "pathName": "pages/daka_record_audio/daka_record_audio",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/grading_test_register/grading_test_register",
+          "pathName": "pages/grading_test_register/grading_test_register",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
           "scene": null
         }
       ]

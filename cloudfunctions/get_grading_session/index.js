@@ -1,9 +1,9 @@
 // 云函数入口文件
 const cloud = require('wx-server-sdk')
-cloud.init()
 
-const db = cloud.database()
+cloud.init()
+const db=cloud.database()
 // 云函数入口函数
 exports.main = async (event, context) => {
-  return await db.collection('intro_video').get()
+  return await db.collection("grading_exam_session").get()
 }

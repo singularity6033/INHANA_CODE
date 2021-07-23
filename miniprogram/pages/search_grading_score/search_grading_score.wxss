@@ -1,9 +1,14 @@
 .img {
-  height: 400rpx;
-  background-image: url('https://696e-inhana-cloud-1g9obu9p408701c5-1305238456.tcb.qcloud.la/LAMDA%E8%80%83%E7%BA%A7%E6%88%90%E7%BB%A9/bg1.jpg?sign=8b96bda602f0e404ce266c8a8b5f5f93&t=1626924685');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center;
+  height: 200rpx;
+}
+
+.edit{
+  display: flex;
+  justify-content: flex-end;
+  font-size: 27rpx;
+  font-weight: normal;
+  font-family: 'SimSun';
+  padding: 15rpx 30rpx;
 }
 
 .idxCon {

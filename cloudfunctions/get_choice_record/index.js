@@ -9,6 +9,6 @@ const _ = db.command;
 exports.main = async (event, context) => {
   const Openid = cloud.getWXContext().OPENID
   return await db.collection("choice_record").orderBy('posttime','desc').where({
-    openid:_.eq(Openid)
+    openid: _.eq(Openid)
   }).get()
 }

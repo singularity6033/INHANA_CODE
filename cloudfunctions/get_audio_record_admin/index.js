@@ -9,6 +9,6 @@ const _ = db.command;
 exports.main = async (event, context) => {
   const Openid = event.openid_record
   return await db.collection("audio_record").orderBy('posttime','desc').where({
-    openid:_.eq(Openid)
+    openid: _.eq(Openid)
   }).get()
 }

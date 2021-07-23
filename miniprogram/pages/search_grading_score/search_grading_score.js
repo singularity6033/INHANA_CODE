@@ -1,11 +1,12 @@
 var FormData = {}
 const app = getApp();
+var SelectedSession = "";
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
+    session: [],
+    index: -1,
+    SelectedSession: '',
     btnShow: false
   },
 
@@ -16,6 +17,28 @@ Page({
         url: '../student_page/student_page',
       })
     }, 100)
+  },
+
+  SessionPicker(e){
+    SelectedSession = this.data.session[e.detail.value]
+    this.setData({
+      index: e.detail.value,
+      SelectedSession
+    });
+  },
+
+  getGradingSession(){
+    wx.cloud.callFunction({
+      name: "get_grading_session",
+    }).then(res=>{
+      var session = []
+      for(var i=0;i<res.result.data.length;i++){
+        session.push(res.result.data[i].session)
+      }
+      this.setData({
+        session
+      })
+    })
   },
 
   IptChanged(res){
@@ -34,6 +57,7 @@ Page({
   onSubmit(e){
     if(app.globalData.userInfo){
       FormData = e.detail.value
+      FormData.exam_session = this.data.SelectedSession
       wx.cloud.callFunction({
         name: "get_grading_score",
         data: FormData
@@ -45,11 +69,9 @@ Page({
           showScore: false
         })
       }else{
+        this.preview_swiper_img(res.result.data[0].score),
         this.setData({
-          modalName: e.currentTarget.dataset.target,
           showScore: true,
-          score: res.result.data[0].score,
-          name: FormData.name
         })
       }
     })
@@ -74,19 +96,25 @@ Page({
     })
   },
 
-  preview_swiper_img(e){
-    var cur=e.target.dataset.src;//获取本地一张图片链接
-    console.log(e)
+  preview_swiper_img(cur){
 		wx.previewImage({
 			current: cur, //字符串，默认显示urls的第一张
   			urls: [cur] // 数组，需要预览的图片链接列表
 		})
   },
+
+  switch_language(e){
+    console.log(e)
+    app.changeLanguage()
+    wx.navigateTo({
+      url: '../search_grading_score/search_grading_score',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getGradingSession()
   },
 
   /**

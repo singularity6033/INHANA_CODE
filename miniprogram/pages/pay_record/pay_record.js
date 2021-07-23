@@ -7,6 +7,7 @@ Page({
    */
   data: {
     pay_record: [],
+    TabCur: 0
   },
 
   get_grading_training_lecture_payment_record(){

@@ -10,6 +10,9 @@ exports.main = async (event, context) => {
   const openid = cloud.getWXContext().OPENID
   var { content, question_name, id, userInfo } = event;
   var posttime = Date.now();
+  db.collection("audio_record").doc(id).update({
+    ping_num: _.inc(1)
+  })
   return await db.collection("ping_record").add({
     data: {
       content,

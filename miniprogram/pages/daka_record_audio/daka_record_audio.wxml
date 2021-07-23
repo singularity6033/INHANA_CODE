@@ -7,7 +7,7 @@
 <wxs src="../../wxs/common.wxs" module="common"/>
 
 <view class="solid-bottom radius margin text-bold text-lg text-center bg-gray light padding">
-  {{audio_record.question_name}}-我的音频
+  {{audio_record.question_name}}
 </view>
 
 <view class='audioPlayer'>
@@ -51,7 +51,7 @@
         <text>{{item.content}}</text>
       </view>
     </view>
-    <view class="date ">{{common.myDate(item.posttime)}}</view>
+    <view class="date ">{{common.myDate(item.posttime,1)}}</view>
   </view>
 </view>
 

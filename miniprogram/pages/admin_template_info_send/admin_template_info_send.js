@@ -58,7 +58,7 @@ Page({
     var teacher = TemplateData.author
     var content = TemplateData.body
     wx.cloud.callFunction({
-      name: "send_template_info1",
+      name: "store_template_info_general",
         data: {
           name,
           content,

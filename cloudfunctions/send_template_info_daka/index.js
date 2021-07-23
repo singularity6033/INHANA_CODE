@@ -23,7 +23,7 @@ var sendMsg = async(item) =>{
       },
       templateId: 'CwckkLsRAyaG-5fx0txMQmjvTgUabdHGb9aGU9vxeH4',
     })
-    const remove = await db.collection('template_msg').where({
+    const remove = await db.collection('template_msg_daka').where({
       timestamp: item.timestamp,
       openid: item.openid
     }).remove()
@@ -32,7 +32,7 @@ var sendMsg = async(item) =>{
 const MAX_LIMIT = 100
 exports.main = async (event, context) => {
   // 先取出集合记录总数
-  const countResult = await db.collection('template_msg').where({
+  const countResult = await db.collection('template_msg_daka').where({
     timestamp:_.and(_.lt(Math.round(new Date())+600*1000),_.gt(Math.round(new Date())))
   }).count()
   const total = countResult.total
@@ -41,7 +41,7 @@ exports.main = async (event, context) => {
   // 承载所有读操作的 promise 的数组
   const tasks = []
   for (let i = 0; i < batchTimes; i++) {
-    const promise = db.collection('template_msg').skip(i * MAX_LIMIT).limit(MAX_LIMIT).where({
+    const promise = db.collection('template_msg_daka').skip(i * MAX_LIMIT).limit(MAX_LIMIT).where({
       timestamp:_.and(_.lt(Math.round(new Date())+600*1000),_.gt(Math.round(new Date())))
     }).get()
     tasks.push(promise)

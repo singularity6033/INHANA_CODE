@@ -14,6 +14,7 @@ Page({
           name:"get_admin"
         }).then(res=>{
           if(res.result == 1){
+            
             wx.setStorageSync('PageCur', 'RegisterInfo')
             wx.reLaunch({
               url: '../admin_page/admin_page',

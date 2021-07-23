@@ -8,6 +8,6 @@ const db=cloud.database()
 exports.main = async (event, context) => {
   const {question_name} = event;
   return await db.collection("homework").where({
-    title:question_name
+    title: question_name
   }).get()
 }

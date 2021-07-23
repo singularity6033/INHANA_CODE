@@ -71,6 +71,7 @@ Page({
     })
     var content = res.detail.value.content;
     var userInfo = app.globalData.userInfo;
+    console.log(userInfo)
     var question_name = this.data.audio_record.question_name;
     wx.cloud.callFunction({
       name: "add_ping",

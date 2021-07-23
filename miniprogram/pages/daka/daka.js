@@ -25,9 +25,10 @@ Component({
       }, 100)
     },
 
-    getNewsData(){
+    getNewsData(Class=''){
       wx.cloud.callFunction({
-        name:"get_live_lecture_info"
+        name:"get_live_lecture_info",
+        data: {Class}
       }).then(res=>{
         this.setData({
           newsList: res.result.data
@@ -50,7 +51,7 @@ Component({
             success (res) { 
               console.log(1)
               wx.cloud.callFunction({
-                name: "send_template_info",
+                name: "store_template_info_daka",
                   data: {
                     name,
                     content,

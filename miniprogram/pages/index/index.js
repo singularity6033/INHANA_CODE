@@ -5,10 +5,12 @@ Component({
   },
   
   data: {
-    swiperList:[],
-    activityUrl:"",
-    show:true,
-    cardCur:0
+    CustomBar: app.globalData.CustomBar,
+    swiperList: [],
+    list_name: [],
+    activityUrl: "",
+    show: true,
+    cardCur: 0
   },
 
   attached: function () {
@@ -23,6 +25,31 @@ Component({
       // console.log(e.detail.current)
       this.setData({
         cardCur:e.detail.current
+      })
+    },
+
+    showModal(e) {
+      this.setData({
+        modalName: e.currentTarget.dataset.target,
+        list_name:['学习内容','知识分享']
+      })
+    },
+
+    hideModal(e) {
+      this.setData({
+        modalName: null
+      })
+    },
+
+    switchTo(e){
+      var url = ''
+      if(e.currentTarget.dataset.item=='学习内容'){
+        url = '../daka_category/daka_category'
+      }else if(e.currentTarget.dataset.item=='知识分享'){
+        url = '../news/news'
+      }
+      wx.navigateTo({
+        url
       })
     },
   

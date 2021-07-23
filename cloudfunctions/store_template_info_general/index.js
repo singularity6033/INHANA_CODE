@@ -8,7 +8,7 @@ exports.main = async (event, context) => {
   const OpenidGroup = event.OpenidGroup
   for(var i=0; i<OpenidGroup.length; i++){
     var OPENID = OpenidGroup[i]
-    db.collection('template_msg1').add({
+    db.collection('template_msg_general').add({
       data: {
         thing2: event.name,
         thing1: event.content,

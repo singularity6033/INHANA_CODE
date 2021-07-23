@@ -3,7 +3,7 @@
 </cu-custom>
 
 <view class='box'>
-  <view class="edit text-right" bindtap="changeLanguage">EN|中文</view>
+  <view class="edit text-right" bindtap="changeLanguage">中文|English ></view>
   <view style="animation-delay: 1.5s;" class='animation-slide-left'>
     <button class="cu-bar bg-white padding-xl margin-xl btn-box" catchtap='myUserinfo' >
       <text class="txt text-xl">{{content.enter}}</text>

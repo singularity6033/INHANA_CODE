@@ -7,7 +7,7 @@ const _ = db.command;
 // 云函数入口函数
 exports.main = async(event, context)=>{
   const openid = cloud.getWXContext().OPENID
-  var {buyer_name, buyer_gender, buyer_phone, buyer_school, buyer_grade, item_name, item_class, item_price, payOrder, payTime, RegisterTime, itemType} = event
+  var {buyer_name, buyer_gender, buyer_phone, buyer_school, buyer_grade, item_name, item_class, item_price, payOrder, payTime, id, itemType} = event
   if(itemType == "grading_test"){
     db.collection("grading_info").where({
       title: item_name
@@ -16,9 +16,7 @@ exports.main = async(event, context)=>{
         num: _.inc(1)
       }
     })
-    return await db.collection("userInfo_grading").where({
-      RegisterTime
-    }).update({
+    return await db.collection("userInfo_grading").doc(id).update({
       data:{
         item_name,
         item_class,

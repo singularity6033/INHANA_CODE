@@ -3,15 +3,19 @@ const app=getApp()
 var FormData={};
 var Selectedgender="";
 var SelectedDate="";
+var SelectedSession="";
 Page({
   data:{
     btnShow:true,
     gender:["男","女"],
     date:[],
+    session:[],
     index1:-1,
     index2:-1,
+    index3:-1,
     Selectedgender:"",
-    SelectedDate:""
+    SelectedDate:"",
+    SelectedSession:""
   },
 
   backToHome(){
@@ -53,6 +57,14 @@ Page({
     });
   },
 
+  SessionPicker(e){
+    SelectedSession = this.data.session[e.detail.value]
+    this.setData({
+      index3: e.detail.value,
+      SelectedSession
+    });
+  },
+
   getGradingDate(){
     wx.cloud.callFunction({
       name: "get_grading_date",
@@ -67,12 +79,26 @@ Page({
     })
   },
 
+  getGradingSession(){
+    wx.cloud.callFunction({
+      name: "get_grading_session",
+    }).then(res=>{
+      var session = []
+      for(var i=0;i<res.result.data.length;i++){
+        session.push(res.result.data[i].session)
+      }
+      this.setData({
+        session
+      })
+    })
+  },
+
   //点击提交表单
   onSubmit(res){
     FormData=res.detail.value
     FormData.gender=this.data.Selectedgender
     FormData.date=this.data.SelectedDate
-    FormData.RegisterTime = common.myDate(Math.round(new Date()),1)
+    FormData.exam_session=this.data.SelectedSession
     var { school, Class, name_CN, name_EN, name, birth, country, phone }=FormData
     console.log(FormData)
     if(school.length==0 || Class.length==0 || name_CN.length==0 || name.length==0 || birth.length==0 || country.length==0 || phone.length==0){
@@ -87,12 +113,14 @@ Page({
         name: "add_userInfo_grading",
         data: FormData
       }).then(res => {
+        console.log(res)
+        wx.setStorageSync('grading_register_id', res.result._id)
         wx.showToast({
           title: '注册成功',
           icon:"success",
           duration: 2000
         })
-        setTimeout(res => {
+        setTimeout(() => {
           wx.navigateTo({
             url: '../item_payment_confirm/item_payment_confirm',
           })
@@ -106,6 +134,7 @@ Page({
    */
   onLoad: function (options) {
     this.getGradingDate()
+    this.getGradingSession()
     if(wx.getStorageSync('language')=='en'){
       this.setData({
         gender:["Male", "Female"],

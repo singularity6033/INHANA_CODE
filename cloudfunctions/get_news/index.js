@@ -6,7 +6,10 @@ const db=cloud.database()
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  return await db.collection("news")
+  var {Class} = event
+  return await db.collection("news").where({
+    class: Class
+  })
   .orderBy("timestamp","desc")
   .get()
 }

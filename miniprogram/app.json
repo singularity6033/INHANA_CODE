@@ -8,6 +8,7 @@
     "pages/login_info/login_info",
     "pages/user/user",
     "pages/daka/daka",
+    "pages/daka_category/daka_category",
     "pages/daka_detail/daka_detail",
     "pages/daka_record/daka_record",
     "pages/daka_record_choice/daka_record_choice",

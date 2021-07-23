@@ -18,12 +18,22 @@
       </swiper-item>
   </swiper>
 
+  <view class="cu-modal drawer-modal justify-start {{modalName=='DrawerModalL'?'show':''}}" bindtap="hideModal">
+  <view class="cu-dialog basis-lg" catchtap style="top:{{CustomBar}}px;height:calc(100vh - {{CustomBar}}px)">
+    <view class="cu-list menu text-left">
+      <view class="cu-item arrow" wx:for="{{list_name}}" wx:key>
+        <view class="content" bindtap="switchTo" data-item="{{item}}">
+          <view>{{item}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
   <view class="cu-list grid col-3 margin-sm">
-	  <view class="cu-item">
-      <navigator url='../intro/intro'>
-        <view class="cuIcon-cascades text-red"></view>
-        <text class="text-df text-bold">学习中心</text>
-      </navigator>
+	  <view class="cu-item" bindtap="showModal" data-target="DrawerModalL">
+      <view class="cuIcon-cascades text-red"></view>
+      <text class="text-df text-bold">学习资源</text>
     </view>
 
     <view class="cu-item">

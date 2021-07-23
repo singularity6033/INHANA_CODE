@@ -7,12 +7,11 @@ const _ = db.command;
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  const openid = cloud.getWXContext().OPENID
   var id = event.id;
-  db.collection("show_activities").doc(id).update({
+  db.collection("live_lecture_info").doc(id).update({
     data:{
       read: _.inc(1)
     }
   })
-  return await db.collection("show_activities").doc(id).get();
+  return await db.collection("live_lecture_info").doc(id).get();
 }

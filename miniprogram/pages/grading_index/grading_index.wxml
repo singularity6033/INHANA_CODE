@@ -18,21 +18,29 @@
       </swiper-item>
   </swiper>
 
+  <view class="cu-modal drawer-modal justify-start {{modalName=='DrawerModalL'?'show':''}}" bindtap="hideModal">
+  <view class="cu-dialog basis-lg" catchtap style="top:{{CustomBar}}px;height:calc(100vh - {{CustomBar}}px)">
+    <view class="cu-list menu text-left">
+      <view class="cu-item arrow" wx:for="{{list_name}}" wx:key>
+        <view class="content" bindtap="switchTo" data-item="{{item}}">
+          <view>{{item}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
   <view class="cu-list grid col-2 margin-sm">
-	  <view class="cu-item">
-      <navigator url='../grading_test_home/grading_test_home'>
-        <view class="cuIcon-shop text-red"></view>
-        <text class="text-df text-bold">考级报名</text>
-        <!-- <text class="text-lg text-bold">Apply For Exams</text> -->
-      </navigator>
+	  <view class="cu-item" bindtap="showModal" data-target="DrawerModalL">
+      <view class="cuIcon-shop text-red"></view>
+      <text class="text-df text-bold">考级报名</text>
+      <!-- <text class="text-lg text-bold">Apply For Exams</text> -->
     </view>
 
-    <view class="cu-item">
-      <navigator url='../learning_resources/learning_resources'>
-        <view class="cuIcon-magic text-red"></view>
-        <text class="text-df text-bold">学习资源</text>
-        <!-- <text class="text-lg text-bold">Learning Resources</text> -->
-      </navigator>
+    <view class="cu-item" bindtap="ToLearningResoures">
+      <view class="cuIcon-magic text-red"></view>
+      <text class="text-df text-bold">学习资源</text>
+      <!-- <text class="text-lg text-bold">Learning Resources</text> -->
     </view>
 
     <view class="cu-item">

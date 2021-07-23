@@ -1,13 +1,12 @@
 var index1=0
 var index2=0
-const app = getApp();
+const app=getApp();
 
 Page({
   data: {
-    TabCur: 0,
-    scrollLeft: 0,
     OnlineLectureList: [],
-    OnlineFileList: []
+    OnlineFileList: [],
+    learning_resources_type: ''
   },
 
   backToHome(){
@@ -17,18 +16,6 @@ Page({
         url: '../student_page/student_page',
       })
     }, 100)
-  },
-
-  tabSelect(e) {
-    if(e.currentTarget.dataset.id==0){
-      this.getOnlineLecture()
-    }else if(e.currentTarget.dataset.id==1){
-      this.getOnlineFile()
-    }
-    this.setData({
-      TabCur: e.currentTarget.dataset.id,
-      scrollLeft: (e.currentTarget.dataset.id-1)*60
-    })
   },
 
   getOnlineLecture(Class="video"){
@@ -103,6 +90,15 @@ Page({
 
   onLoad: function (options) {
     this.getOnlineLecture()
+    var learning_resources_type = wx.getStorageSync('learning_resources_type')
+    if(learning_resources_type == '考试知识点视频'){
+      this.getOnlineLecture()
+    }else if(learning_resources_type == '考试须知'){
+      this.getOnlineFile()
+    }
+    this.setData({
+      learning_resources_type
+    })
   },
 
   /**

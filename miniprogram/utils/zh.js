@@ -11,6 +11,7 @@ let zh = {
   contact: '联系客服',
   share: '分享给好友',
   name: '姓名',
+  back: "返回",
   chinese_name: "考生中文名",
   english_name: "考生英文名",
   certificate_name: "考生想出现在证书上的名字",
@@ -19,7 +20,8 @@ let zh = {
   birthday: "考生出生年月日",
   birthday_clue: "如：2010年1月1日",
   nationality: "考生国籍",
-  test_center_and_date: "选择考试日期和地点",
+  test_date: "选择考点",
+  test_session: "选择考场",
   edit: '修改个人信息',
   confirm: '确认',
   choose: "选择",
@@ -50,7 +52,13 @@ let zh = {
   class_name: '名称',
   class_price: '价格',
   pay_time: '购买时间',
-  order_number: '订单号'
+  order_number: '订单号',
+  // search_grading_score
+  search_grading_title: "LAMDA考级成绩查询",
+  pin_search: "输入PIN码...",
+  search: "查询",
+  error_info: "无查询结果，请检查输入内容是否正确！",
+
 }
 
 module.exports = {

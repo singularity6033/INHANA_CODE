@@ -7,14 +7,14 @@ const db = cloud.database()
 exports.main = async (event, context) => {
   const {OPENID} = cloud.getWXContext();
 
-  var res=await db.collection("template_msg").where({
+  var res=await db.collection("template_msg_daka").where({
     openid: OPENID,
     timestamp: event.timestamp
   }).count()
   var size=res.total
 
   if(!size){
-    db.collection('template_msg').add({
+    db.collection('template_msg_daka').add({
       // data 字段表示需新增的 JSON 数据
       data: {
         thing5: event.name,
