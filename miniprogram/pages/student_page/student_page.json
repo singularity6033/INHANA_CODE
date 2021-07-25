@@ -1,7 +1,7 @@
 {
   "usingComponents": {
     "FrontPage": "/pages/index/index",
-    "News": "/pages/news/news",
+    "News": "/pages/news_general/news_general",
     "Daka": "/pages/daka/daka",
     "User": "/pages/user/user"
   }

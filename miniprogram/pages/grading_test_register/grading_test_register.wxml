@@ -13,7 +13,40 @@
   <view class="padding text-lg">
     <text class="text-red">*</text><text>为必填项</text>
   </view>
-  <form bindsubmit="onSubmit">
+
+  <form bindsubmit="onSubmit1" wx:if="{{itemType=='mock_test'}}">
+    <view class="padding text-lg">{{content.mock_date}}
+      <text class="text-red">*</text>
+    </view>
+    <view class="cu-form-group margin-bottom box">
+      <input bindinput="IptChanged" name="mock_date" placeholder="{{content.birthday_clue}}"></input>
+    </view>
+
+    <view class="padding text-lg">{{content.mock_type}}
+      <text class="text-red">*</text>
+    </view>
+    <view class="cu-form-group margin-bottom box">
+      <picker mode="selector" range="{{mock_type}}" value="{{index1}}" bindchange="mockTypePicker">
+        <view class="picker">{{content.choose}}：{{mock_type[index1]}}</view>
+      </picker>
+    </view>
+
+    <view class="padding text-lg">{{content.mock_grade}}
+      <text class="text-red">*</text>
+    </view>
+    <view class="cu-form-group margin-bottom box">
+      <picker mode="selector" range="{{mock_grade}}" value="{{index2}}" bindchange="mockGradePicker">
+        <view class="picker">{{content.choose}}：{{mock_grade[index2]}}</view>
+      </picker>
+    </view>
+
+    <view class="cu-bar btn-group">
+        <button class="cu-btn bg-green shadow-blur round" form-type="submit" disabled="{{btnShow}}" type="primary">{{content.registration}}</button>
+        <button class="cu-btn Btn bg-green shadow-blur round" form-type="reset" type="primary" plain>{{content.reset}}</button>
+    </view>
+  </form>
+  
+  <form bindsubmit="onSubmit" wx:if="{{itemType!='mock_test'}}">
     <view class="padding text-lg">{{content.school}}
       <text class="text-red">*</text>
     </view>

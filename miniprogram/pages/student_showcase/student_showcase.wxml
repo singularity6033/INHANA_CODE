@@ -1,0 +1,23 @@
+<cu-custom bgColor="bg-gradual-pink" isBack='{{true}}'>
+  <view slot="content">INHANA英翰语言戏剧</view>
+  <view slot="backText" class="margin-lg text-xl" bindtap="backToHome">
+    <text class="cuIcon-home"></text>
+  </view>
+</cu-custom>
+<view 
+  wx:for="{{student_showcase_info}}"
+  wx:key="index">
+  <view class="solid-bottom text-lg text-center text-bold bg-white light padding">
+    学员展示{{index+1}}
+  </view>
+  
+  <view class='videoView'>
+    <txv-video defn vid="{{item.video_url}}" wx:if="{{item.video_url}}" playerid="my{{index}}" class='video' auto-pause-if-navigate object-fit bindplay="play"></txv-video>
+  </view>
+
+  <view class="view_fengexian">
+	  <view></view>
+	  <text class="text_fengexian">INHANA</text>
+	  <view></view>
+  </view>
+</view>

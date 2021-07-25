@@ -6,6 +6,9 @@ const db = cloud.database()
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  return await db.collection("offline_lecture_info").orderBy("deadline","desc")
-    .get()
+  //返回排序后的结果
+  const openid = cloud.getWXContext().OPENID
+  return db.collection('mock_test_payment_record').where({
+    openid
+  }).get()
 }

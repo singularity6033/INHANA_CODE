@@ -1,5 +1,5 @@
 <cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
-  <view slot="content">{{learning_resources_type}}</view>
+  <view slot="content">INHANA英翰语言戏剧</view>
   <view slot="backText" class="margin-lg text-xl" bindtap="backToHome">
     <text class="cuIcon-home"></text>
   </view>
@@ -21,7 +21,7 @@
   </view> 
 </view>
 
-<view class="idxCon" wx:for="{{OnlineFileList}}" wx:key="index" wx:if="{{learning_resources_type=='考试须知'}}">
+<view class="idxCon" wx:for="{{OnlineFileList}}" wx:key="index" wx:if="{{learning_resources_type!='考试知识点视频'}}">
     <view class="row cu-bar bg-white margin-top-sm" bindtap="FileDetail" data-index="{{index}}">
         <view class="rowTxt">
           <view class="title text-black text-bold text-left">{{item.title}}</view>

@@ -7,8 +7,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+    TabTitle:["词汇拓展","阅读表演","演讲写作","口语对话"],
+    TabTitle_En:["Vocabulary Exploration","Reading Performance","Writing Speech","Dialogue Practice"],
     TabCur: 0,
-    scrollLeft: 0,
+    scrollLeft:0,
   },
 
   backToHome(){
@@ -24,7 +26,11 @@ Page({
     if(e.currentTarget.dataset.id==0){
       this.getNewsData()
     }else if(e.currentTarget.dataset.id==1){
-      this.getNewsData('中学')
+      this.getNewsData('阅读表演')
+    }else if(e.currentTarget.dataset.id==2){
+      this.getNewsData('演讲写作')
+    }else if(e.currentTarget.dataset.id==3){
+      this.getNewsData('口语对话')
     }
     this.setData({
       TabCur: e.currentTarget.dataset.id,
@@ -32,7 +38,7 @@ Page({
     })
   },
 
-  getNewsData(Class="小学"){
+  getNewsData(Class="词汇拓展"){
     wx.cloud.callFunction({
       name: "get_live_lecture_info",
       data: {Class}
@@ -46,7 +52,7 @@ Page({
   ShowNewsOne(e){
     console.log(e)
     index = e.currentTarget.dataset.index
-    wx.setStorageSync('question_name', this.data.newsList[index].title)
+    wx.setStorageSync('index_name', this.data.newsList[index].title)
     //这是模板信息
     var name = this.data.newsList[index].template_title
     var teacher = this.data.newsList[index].teacher
@@ -82,7 +88,7 @@ Page({
       })
     }else if((timestamp-Math.round(new Date()))<0){
       wx.navigateTo({
-        url: '/pages/daka_detail/daka_detail',
+        url: '/pages/grading_train_content/grading_train_content',
       })
     }else{
       wx.setStorageSync('daka_timestamp', timestamp)

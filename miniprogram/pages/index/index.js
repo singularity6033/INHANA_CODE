@@ -10,7 +10,8 @@ Component({
     list_name: [],
     activityUrl: "",
     show: true,
-    cardCur: 0
+    cardCur: 0,
+    NowTime: Math.round(new Date())
   },
 
   attached: function () {
@@ -24,7 +25,7 @@ Component({
     cardSwiper(e) {
       // console.log(e.detail.current)
       this.setData({
-        cardCur:e.detail.current
+        cardCur: e.detail.current
       })
     },
 
@@ -32,6 +33,20 @@ Component({
       this.setData({
         modalName: e.currentTarget.dataset.target,
         list_name:['学习内容','知识分享']
+      })
+    },
+
+    showModal1(){
+      this.setData({
+        modalName: 'DrawerModalL',
+        list_name:['资讯链接','视频列表']
+      })
+    },
+
+    showModal2(){
+      this.setData({
+        modalName: 'DrawerModalL',
+        list_name: ['好书推荐系列','儿童诗歌系列','戏剧故事系列','知识大百科系列','英国资讯分享']
       })
     },
 
@@ -46,7 +61,17 @@ Component({
       if(e.currentTarget.dataset.item=='学习内容'){
         url = '../daka_category/daka_category'
       }else if(e.currentTarget.dataset.item=='知识分享'){
+        this.showModal1()
+        return;
+      }else if(e.currentTarget.dataset.item=='资讯链接'){
         url = '../news/news'
+      }else if(e.currentTarget.dataset.item=='视频列表'){
+        this.showModal2()
+        return;
+      }else{
+        wx.setStorageSync('index_name', e.currentTarget.dataset.item)
+        console.log(e.currentTarget.dataset.item)
+        url = '../video_list/video_list'
       }
       wx.navigateTo({
         url

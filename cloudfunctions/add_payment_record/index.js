@@ -72,5 +72,27 @@ exports.main = async(event, context)=>{
         payTime
       }
   })
+}else if(itemType=="mock_test"){
+  db.collection("grading_info").where({
+    title: item_name
+  }).update({
+    data:{
+      num:_.inc(1)
+    }
+  })
+  return await db.collection("mock_test_payment_record").doc(id).update({
+    data:{
+      buyer_name,
+      buyer_gender,
+      buyer_phone,
+      buyer_school,
+      buyer_grade,
+      item_name,
+      item_class,
+      item_price,
+      payOrder,
+      payTime
+    }
+  })
 }
 }

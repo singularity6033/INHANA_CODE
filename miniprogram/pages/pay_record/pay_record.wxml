@@ -7,14 +7,8 @@
 
 <scroll-view scroll-x class="bg-white nav">
   <view class="flex text-center">
-    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{3}}" wx:key bindtap="tabSelect" data-id="{{index}}" wx:if="{{index==0}}">
-      <text>考级报名记录</text>
-    </view>
-    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{3}}" wx:key bindtap="tabSelect" data-id="{{index}}" wx:if="{{index==1}}">
-      <text>线下培训课程</text>
-    </view>
-    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{3}}" wx:key bindtap="tabSelect" data-id="{{index}}" wx:if="{{index==2}}">
-      <text>考级培训课程</text>
+    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{type}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+      <text>{{item}}</text>
     </view>
   </view>
 </scroll-view>

@@ -38,10 +38,6 @@ Page({
     this.getGradingData(e.currentTarget.dataset.item)
   },
 
-  getPayShow(){
-    
-  },
-
   IsShow(List, openid){
     for (var i = 0; i<List.length; i++){
       console.log(List)
@@ -65,6 +61,10 @@ Page({
         url: '../item_detail/item_detail'
       })
     }else{
+      this.setData({
+        TabCur: 0,
+        scrollLeft: 0,
+      })
       wx.showToast({
         title: '请先登录',
         icon:'error',
@@ -88,6 +88,10 @@ Page({
         url: '../grading_train_content/grading_train_content'
       })
     }else{
+      this.setData({
+        TabCur: 0,
+        scrollLeft: 0,
+      })
       wx.showToast({
         title: '请先登录',
         icon:'error',

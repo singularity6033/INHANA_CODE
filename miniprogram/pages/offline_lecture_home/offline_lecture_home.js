@@ -2,7 +2,8 @@ const app = getApp();
 Page({
 
   data: {
-    offlineLectureList:[]
+    offlineLectureList:[],
+    NowTime: Math.round(new Date())
   },
 
   ShowDataOne(e){

@@ -6,6 +6,6 @@ const db = cloud.database()
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  return await db.collection("offline_lecture_info").orderBy("deadline","desc")
+  return await db.collection('student_showcase').orderBy('order','asc')
     .get()
 }

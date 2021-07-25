@@ -17,7 +17,7 @@ page{
   width: 65%;
 }
 .idxCon .row .rowTxt .title {
-  font-size: 32rpx;
+  font-size: 30rpx;
   margin-left: 20rpx;
   height: 80rpx;
 }

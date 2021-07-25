@@ -15,7 +15,7 @@ Page({
   },
 
   ToPay(){
-    if(this.data.itemType == "grading_test"){
+    if(this.data.itemType == "grading_test" || this.data.itemType == "mock_test"){
       wx.navigateTo({
         url: '../grading_test_register/grading_test_register',
       }) 

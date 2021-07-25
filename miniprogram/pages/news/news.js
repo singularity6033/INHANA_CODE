@@ -42,6 +42,18 @@ Page({
     })
   },
 
+  getNewsVideo(){
+    wx.cloud.callFunction({
+      name: "get_news_video",
+      data: {Class}
+    }).then(res=>{
+      console.log(res)
+      this.setData({
+        newsList: res.result.data
+      })
+    })
+  },
+
   view_detail(e){
     var webview = e.currentTarget.dataset.src
     var index = e.currentTarget.dataset.index
@@ -61,7 +73,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var knowledge_share_type = wx.getStorageSync('knowledge_share_type')
+    this.setData({
+      knowledge_share_type
+    })
     this.getNews();
+    this.getNewsVideo();
   },
 
   /**

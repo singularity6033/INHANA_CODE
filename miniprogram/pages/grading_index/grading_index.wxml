@@ -31,7 +31,7 @@
 </view>
 
   <view class="cu-list grid col-2 margin-sm">
-	  <view class="cu-item" bindtap="showModal" data-target="DrawerModalL">
+	  <view class="cu-item" bindtap="showModal01" data-target="DrawerModalL">
       <view class="cuIcon-shop text-red"></view>
       <text class="text-df text-bold">考级报名</text>
       <!-- <text class="text-lg text-bold">Apply For Exams</text> -->
@@ -43,11 +43,9 @@
       <!-- <text class="text-lg text-bold">Learning Resources</text> -->
     </view>
 
-    <view class="cu-item">
-      <navigator url='../grading_train_home/grading_train_home'>
+    <view class="cu-item" bindtap="showModal02" data-target="DrawerModalL">
         <view class="cuIcon-paint text-red"></view>
-        <text class="text-df text-bold">考级培训</text>
-      </navigator>
+        <text class="text-df text-bold">考前培训</text>
     </view>
     
     <view class="cu-item">

@@ -8,7 +8,7 @@
 <view class="text-right edit" bindtap="switch_language">中文|English ></view>
 
 <view class="padding text-center">
-  <view class="padding-xl radius text-lg text-bold shadow bg-gradual-blue margin-top">LAMDA考级成绩查询</view>
+  <view class="padding-xl radius text-lg text-bold shadow bg-gradual-blue margin-top">{{content.search_grading_title}}</view>
 </view>
 
 <view class='padding'>
@@ -19,10 +19,10 @@
       </picker>
     </view>
     <view class="cu-form-group margin-top">
-      <input bindinput="IptChanged" name="PIN" placeholder="请输入PIN码"></input>
+      <input bindinput="IptChanged" name="PIN" placeholder="{{content.pin_search}}"></input>
     </view>
     <view class="cu-bar btn-group padding-xl">
-      <button class="cu-btn bg-gradual-green shadow-blur round" form-type="submit" disabled="{{!btnShow}}" type="primary">查询</button>
+      <button class="cu-btn bg-gradual-green shadow-blur round" form-type="submit" disabled="{{!btnShow}}" type="primary">{{content.search}}</button>
     </view>
   </form>
 </view>
@@ -30,7 +30,7 @@
 <view class="cu-modal {{modalName=='Image'?'show':''}}" wx:if="{{!showScore}}">
   <view class="cu-dialog">
     <view class="padding-xl text-red">
-      无查询结果，请检查输入内容是否正确！
+      {{content.error_info}}
     </view>
     <view class="cu-bar bg-white justify-center">
       <view class="action">

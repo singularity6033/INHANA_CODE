@@ -6,7 +6,7 @@
 </cu-custom>
 <wxs src="../../wxs/common.wxs" module="common"/>
 
-<view class="idxCon" wx:for="{{offlineLectureList}}" wx:key="index" >
+<view class="idxCon" wx:for="{{offlineLectureList}}" wx:key="index" wx:if="{{NowTime<item.deadline}}">
   <view class="row cu-bar bg-white margin-top-sm" bindtap="ShowDataOne" data-index="{{index}}">
     <view class="rowTxt">
       <view class="title text-black text-bold text-left">{{item.title}}</view>
@@ -15,7 +15,7 @@
           已有{{common.getMyNum(item.num)}}人参与
         </view>
         <view class="info text-gray">
-          发布于{{common.timesFun(item.posttime)}}前
+          将于{{common.myDate(item.posttime,1)}}截止
         </view>
       </view>
       <view class="rowPic">

@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    type: ['考级报名记录','模拟考试','线下培训课程','考前培训课程'],
     pay_record: [],
     TabCur: 0
   },
@@ -42,10 +43,22 @@ Page({
     })
   },
 
+  get_mock_test_payment(){
+    wx.cloud.callFunction({
+      name: "get_mock_test_payment",
+    }).then(res=>{
+      this.setData({
+        pay_record: res.result.data
+      })
+    })
+  },
+
   tabSelect(e) {
     if(e.currentTarget.dataset.id==0){
       this.get_userInfo_grading()
     }else if(e.currentTarget.dataset.id==1){
+      this.get_mock_test_payment()
+    }else if(e.currentTarget.dataset.id==2){
       this.get_offline_lecture_payment_record()
     }else{
       this.get_grading_training_lecture_payment_record()
@@ -70,6 +83,9 @@ Page({
    */
   onLoad: function (options) {
     this.get_userInfo_grading()
+    this.get_mock_test_payment()
+    this.get_offline_lecture_payment_record()
+    this.get_grading_training_lecture_payment_record()
   },
 
   /**

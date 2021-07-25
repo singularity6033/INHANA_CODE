@@ -16,6 +16,7 @@ let en = {
   english_name: "English Name",
   certificate_name: "The name that the candidate wants to appear on the certificate",
   certificate_name_clue: "Please type in English or Pinyin, and it should be same as your passport or ID card",
+  mock_date: "Please type in Exam Date",
   school: 'School',
   birthday: "Birthday (YY/MM/DD)",
   birthday_clue: "For example: 2020.1.1",
@@ -32,6 +33,8 @@ let en = {
   language: 'Language',
   gender: 'Choose Gender',
   grade: 'Choose Grade',
+  mock_type: 'Choose Exam Type',
+  mock_grade: 'Choose Exam Grade',
   grade_and_class: 'Grade and Class',
   grade_and_class_clue: '1A or 2nd Grade 1st Class',
   phone: 'Phone Number',
@@ -55,7 +58,7 @@ let en = {
   search_grading_title: "Transcript",
   pin_search: "Enter PIN Code...",
   search: "Search",
-  error_info: "无查询结果，请检查输入内容是否正确！", 
+  error_info: "No result, please check whether the input content is correct!", 
 }
 
 module.exports = {

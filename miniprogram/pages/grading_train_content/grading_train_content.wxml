@@ -7,8 +7,8 @@
 
 <view class="cu-bar margin-sm bg-white">
 		<view class="action">
-			<text class="text-lg text-bold">考级培训课程列表</text>
-			<text class="text-Abc text-gray self-end margin-left-sm">LAMDA Training Lectures List</text>
+			<text class="text-lg text-bold">在线课程</text>
+			<text class="text-Abc text-gray self-end margin-left-sm">Online Lectures</text>
 		</view>
 </view>
 
@@ -35,8 +35,8 @@
 	</view>
 </view>
   
-  <view class="btn-group margin-tb-lg text-center padding">
-    <button class="cu-btn lg round bg-gradual-orange margin-xs" bindtap="ToFileList" data-item="课前资料">课程资料</button>
-  </view>
+<view class="btn-group margin-tb-lg text-center padding">
+  <button class="cu-btn lg round bg-gradual-orange margin-xs" bindtap="ToFileList" data-item="课前资料">课程资料</button>
+</view>
 
 

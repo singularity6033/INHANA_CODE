@@ -6,6 +6,7 @@ Page({
   data: {
     question_list_choice:[],
     question_list_audio:[],
+    download:[],
     grading_training_video_list: [],
   },
 
@@ -20,8 +21,9 @@ Page({
 
   ToFileList(){
     if(app.globalData.userInfo){
+      wx.setStorageSync('download_info', this.data.download)
       wx.navigateTo({
-        url: '../show_files/show_files',
+        url: '../test_download/test_download',
       })
     }else{
       wx.showToast({
@@ -136,17 +138,34 @@ Page({
   //   })
   // },
 
-  getFiles(){
+  // getFiles(){
+  //   wx.cloud.callFunction({
+  //     name:"get_Files",
+  //     data: {index_name}
+  //   }).then(res=>{
+  //     this.setData({
+  //       files: res.result.data
+  //     })
+  //   })
+  // },
+
+  getDownloads(){
+    var download = []
     wx.cloud.callFunction({
-      name:"get_Files",
-      data: {index_name}
+      name:"get_downloads",
+      data: {question_name}
     }).then(res=>{
-      this.setData({
-        files: res.result.data
-      })
+      console.log(res)
+      for(var i=0; i<res.result.data.length; i++){
+        if(res.result.data[i].category=="课程资料"){
+          download.push(res.result.data[i])
+        }
+      }
+    })
+    this.setData({
+      download,
     })
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -155,6 +174,7 @@ Page({
     question_name = index_name
     this.getDakaInfo_audio();
     this.getDakaInfo_choice();
+    this.getDownloads();
   },
 
   /**

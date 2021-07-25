@@ -7,7 +7,8 @@ Page({
   data: {
     CustomBar: app.globalData.CustomBar,
     list_name: [],
-    swiperList:[],
+    swiperList: [],
+    mock_test: {},
     grading_intro_url: "",
     show:true,
     cardCur:0
@@ -22,10 +23,17 @@ Page({
     }, 100)
   },
 
-  showModal(e) {
+  showModal01(e) {
     this.setData({
       modalName: e.currentTarget.dataset.target,
       list_name:['考试科目','考试须知']
+    })
+  },
+
+  showModal02(e) {
+    this.setData({
+      modalName: e.currentTarget.dataset.target,
+      list_name:['线上课程','模拟考试']
     })
   },
 
@@ -42,9 +50,41 @@ Page({
     }else if(e.currentTarget.dataset.item=='考试须知'){
       url = '../learning_resources/learning_resources'
       wx.setStorageSync('learning_resources_type', '考试须知')
+    }else if(e.currentTarget.dataset.item=='线上课程'){
+      url = '../grading_train_home/grading_train_home'
+    }else if(e.currentTarget.dataset.item=='模拟考试'){
+      if(app.globalData.userInfo){
+        url = '../item_detail/item_detail'
+        wx.setStorageSync('itemType', 'mock_test')
+        wx.setStorageSync('itemOne', this.data.mock_test)
+      }else{
+        wx.showToast({
+          title: '请先登录',
+          icon:'error',
+          duration: 1500
+        })
+        wx.setStorageSync('PageCur', 'User')
+        setTimeout(() => {
+          wx.navigateTo({
+            url: '../student_page/student_page',
+          })
+        }, 1500);
+        return;
+      }
     }
     wx.navigateTo({
       url
+    })
+  },
+
+  getMockTest(Class="模拟考试"){
+    wx.cloud.callFunction({
+      name: "get_grading_info",
+      data: {Class}
+    }).then(res=>{
+      this.setData({
+        mock_test: res.result.data[0]
+      })
     })
   },
 
@@ -99,6 +139,7 @@ Page({
   onLoad: function (options) {
     this.getSwiperList();
     this.getActivityImg();
+    this.getMockTest();
   },
 
   /**

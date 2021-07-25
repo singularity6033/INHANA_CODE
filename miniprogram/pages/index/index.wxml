@@ -53,14 +53,14 @@
     <view class="cu-item">
       <navigator url='../offline_lecture_home/offline_lecture_home'>
         <view class="cuIcon-magic text-red"></view>
-        <text class="text-df text-bold">线下培训</text>
+        <text class="text-df text-bold">近期课程</text>
       </navigator>
     </view>
 
     <view class="cu-item">
-      <navigator url='../review/review'>
+      <navigator url='../student_showcase/student_showcase'>
         <view class="cuIcon-people text-red"></view>
-        <text class="text-df text-bold">教师风采</text>
+        <text class="text-df text-bold">学员风采</text>
       </navigator>
     </view>
     
@@ -81,7 +81,7 @@
     </view>
   </navigator>
 
-  <view class="cu-card case" wx:for="{{offlineLectureList}}" wx:key="index">
+  <view class="cu-card case" wx:for="{{offlineLectureList}}" wx:key="index" wx:if="{{NowTime<item.deadline}}">
     <view class="cu-item shadow" bindtap="ShowDataOne" data-index="{{index}}">
       <view class="image">
         <image src="{{item.cover_url}}" mode="widthFix"></image>
@@ -93,9 +93,9 @@
     <view class="cu-list menu-avatar">
       <view class="cu-item">
         <view class="flex-sub padding">
-          <view class="text-blue text-shadow text-lg padding-bottom-xs">点击查看详情</view>
-          <view class="text-gray text-lg flex justify-between">
-            发布于{{common.timesFun(item.posttime)}}前
+          <view class="text-blue text-shadow text-df padding-bottom-xs">点击查看详情</view>
+          <view class="text-gray text-df flex justify-between">
+            将于{{common.myDate(item.posttime,1)}}截止
             <view class="text-red text-price text-lg">{{item.price}}</view>
           </view>
         </view>

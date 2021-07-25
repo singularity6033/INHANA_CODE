@@ -13,9 +13,10 @@ Component({
   },
 
   methods: {
-    getNewsData(){
+    getNewsData(Class=''){
       wx.cloud.callFunction({
-        name:"get_live_lecture_info"
+        name:"get_live_lecture_info",
+        data: {Class}
       }).then(res=>{
         this.setData({
           LiveLectureList: res.result.data

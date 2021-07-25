@@ -4,10 +4,14 @@ var FormData={};
 var Selectedgender="";
 var SelectedDate="";
 var SelectedSession="";
+var SelectedMockType="";
+var SelectedMockGrade="";
 Page({
   data:{
     btnShow:true,
     gender:["男","女"],
+    mock_type:["公共演讲 Public Speaking","诗歌散文朗诵 Speaking Verse and Prose","戏剧独白表演 Acting(Solo)","阅读表演 Reading for Performance"],
+    mock_grade:["预备级 Entry Level","一级 Grade One","二级 Grade Two","三级 Grade Three","四级 Grade Four","五级 Grade Five"],
     date:[],
     session:[],
     index1:-1,
@@ -15,7 +19,9 @@ Page({
     index3:-1,
     Selectedgender:"",
     SelectedDate:"",
-    SelectedSession:""
+    SelectedSession:"",
+    SelectedMockType:"",
+    SelectedMockGrade:""
   },
 
   backToHome(){
@@ -39,6 +45,31 @@ Page({
         btnShow: true
       })
     }
+  },
+
+  mockTypePicker(e){
+    SelectedMockType = this.data.mock_type[e.detail.value]
+    if(SelectedMockType=="诗歌散文朗诵 Speaking Verse and Prose"){
+      this.setData({
+        mock_grade:["预备级 Entry Level","入门级别阶段一 Introductory Stage1","入门级别阶段二 Introductory Stage2","入门级别阶段三 Introductory Stage3",
+        "一级 Grade One","二级 Grade Two","三级 Grade Three","四级 Grade Four","五级 Grade Five"],
+        index1: e.detail.value,
+        SelectedMockType
+      });
+    }else{
+      this.setData({
+        index1: e.detail.value,
+        SelectedMockType
+      });
+    }
+  },
+
+  mockGradePicker(e){
+    SelectedMockGrade = this.data.mock_grade[e.detail.value]
+    this.setData({
+      index2: e.detail.value,
+      SelectedMockGrade
+    });
   },
 
   genderPicker(e){
@@ -94,6 +125,41 @@ Page({
   },
 
   //点击提交表单
+  onSubmit1(res){
+    FormData=res.detail.value
+    FormData.mock_type=this.data.SelectedMockType
+    FormData.mock_grade=this.data.SelectedMockGrade
+    var { mock_date }=FormData
+    console.log(FormData)
+    if(mock_date.length==0){
+        wx.showToast({
+          title: '注册信息不能为空',
+          icon:"none",
+          duration:1000
+        })
+        return;
+      }else{
+      wx.cloud.callFunction({
+        name: "add_mock_test_record",
+        data: FormData
+      }).then(res => {
+        console.log(res)
+        wx.setStorageSync('grading_register_id', res.result._id)
+        wx.showToast({
+          title: '注册成功',
+          icon:"success",
+          duration: 2000
+        })
+        setTimeout(() => {
+          wx.navigateTo({
+            url: '../item_payment_confirm/item_payment_confirm',
+          })
+        }, 1500)
+      })
+    }
+  },
+
+  //点击提交表单
   onSubmit(res){
     FormData=res.detail.value
     FormData.gender=this.data.Selectedgender
@@ -135,6 +201,10 @@ Page({
   onLoad: function (options) {
     this.getGradingDate()
     this.getGradingSession()
+    var itemType = wx.getStorageSync('itemType')
+    this.setData({
+      itemType
+    })
     if(wx.getStorageSync('language')=='en'){
       this.setData({
         gender:["Male", "Female"],

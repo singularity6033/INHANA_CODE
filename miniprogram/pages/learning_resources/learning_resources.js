@@ -90,15 +90,13 @@ Page({
 
   onLoad: function (options) {
     this.getOnlineLecture()
+    this.getOnlineFile()
     var learning_resources_type = wx.getStorageSync('learning_resources_type')
-    if(learning_resources_type == '考试知识点视频'){
-      this.getOnlineLecture()
-    }else if(learning_resources_type == '考试须知'){
-      this.getOnlineFile()
+    if(learning_resources_type=='考试知识点视频'){
+      this.setData({
+        learning_resources_type
+      })
     }
-    this.setData({
-      learning_resources_type
-    })
   },
 
   /**
