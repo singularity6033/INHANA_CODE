@@ -12,25 +12,26 @@ Page({
     category: ['好书推荐系列','儿童诗歌系列','戏剧故事系列','知识大百科系列','英国资讯分享']
   },
 
-  tabSelect(e) {
-    if(e.currentTarget.dataset.id==0){
-      this.getNews()
-    }else if(e.currentTarget.dataset.id==1){
-      this.getNews('儿童诗歌系列')
-    }else if(e.currentTarget.dataset.id==2){
-      this.getNews('戏剧故事系列')
-    }else if(e.currentTarget.dataset.id==3){
-      this.getNews('知识大百科系列')
-    }else if(e.currentTarget.dataset.id==4){
-      this.getNews('英国资讯分享')
-    }
-    this.setData({
-      TabCur: e.currentTarget.dataset.id,
-      scrollLeft: (e.currentTarget.dataset.id-1)*60
-    })
-  },
+  // tabSelect(e) {
+  //   if(e.currentTarget.dataset.id==0){
+  //     this.getNews()
+  //   }else if(e.currentTarget.dataset.id==1){
+  //     this.getNews('儿童诗歌系列')
+  //   }else if(e.currentTarget.dataset.id==2){
+  //     this.getNews('戏剧故事系列')
+  //   }else if(e.currentTarget.dataset.id==3){
+  //     this.getNews('知识大百科系列')
+  //   }else if(e.currentTarget.dataset.id==4){
+  //     this.getNews('英国资讯分享')
+  //   }
+  //   this.setData({
+  //     TabCur: e.currentTarget.dataset.id,
+  //     scrollLeft: (e.currentTarget.dataset.id-1)*60
+  //   })
+  // },
 
   getNews(Class="好书推荐系列"){
+    wx.showLoading()
     wx.cloud.callFunction({
       name: "get_news",
       data: {Class}
@@ -39,18 +40,7 @@ Page({
       this.setData({
         newsList: res.result.data
       })
-    })
-  },
-
-  getNewsVideo(){
-    wx.cloud.callFunction({
-      name: "get_news_video",
-      data: {Class}
-    }).then(res=>{
-      console.log(res)
-      this.setData({
-        newsList: res.result.data
-      })
+      wx.hideLoading()
     })
   },
 
@@ -78,7 +68,6 @@ Page({
       knowledge_share_type
     })
     this.getNews();
-    this.getNewsVideo();
   },
 
   /**

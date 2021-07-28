@@ -1,6 +1,3 @@
-page{
-  background-color: white;
-}
 .idxCon {
   padding-right: 20rpx;
   padding-left: 20rpx;
@@ -17,30 +14,25 @@ page{
   width: 65%;
 }
 .idxCon .row .rowTxt .title {
-  font-size: 28rpx;
-  margin-bottom: 25rpx;
+  font-size: 32rpx;
+  margin-bottom: 10rpx;
   margin-left: 20rpx;
   height: 100rpx;
 }
 .idxCon .row .rowTxt .info {
-  font-size: 28rpx;
+  font-size: 26rpx;
   margin-left: 20rpx;
   columns: #999999;
 }
-
 .idxCon .row .rowPic {
   height: 100%;
   width: 32%;
-  position: relative;
 }
 .idxCon .row .rowPic .img {
   height: 100%;
   width: 100%;
 }
-.idxCon .row .rowPic .img1 {
-  height: 20%;
-  width: 20%;
-  position: absolute;
-  right: 0;
-  bottom: 0;
+
+.tabbar_style{
+  padding-bottom: 250rpx;
 }

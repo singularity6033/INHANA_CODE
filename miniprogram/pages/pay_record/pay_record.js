@@ -12,6 +12,7 @@ Page({
   },
 
   get_grading_training_lecture_payment_record(){
+    wx.showLoading()
     wx.cloud.callFunction({
       name: "get_grading_training_lecture_payment_record",
     }).then(res=>{
@@ -19,10 +20,12 @@ Page({
       this.setData({
         pay_record: res.result.data
       })
+      wx.hideLoading()
     })
   },
 
   get_offline_lecture_payment_record(){
+    wx.showLoading()
     wx.cloud.callFunction({
       name: "get_offline_lecture_payment_record",
     }).then(res=>{
@@ -30,26 +33,31 @@ Page({
       this.setData({
         pay_record: res.result.data
       })
+      wx.hideLoading()
     })
   },
 
   get_userInfo_grading(){
+    wx.showLoading()
     wx.cloud.callFunction({
       name: "get_userInfo_grading",
     }).then(res=>{
       this.setData({
         pay_record: res.result.data
       })
+      wx.hideLoading()
     })
   },
 
   get_mock_test_payment(){
+    wx.showLoading()
     wx.cloud.callFunction({
       name: "get_mock_test_payment",
     }).then(res=>{
       this.setData({
         pay_record: res.result.data
       })
+      wx.hideLoading()
     })
   },
 

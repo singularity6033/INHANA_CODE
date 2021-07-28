@@ -14,8 +14,8 @@
         <view class="info text-shadow">
           已有{{common.getMyNum(item.num)}}人参与
         </view>
-        <view class="info text-gray">
-          将于{{common.myDate(item.posttime,1)}}截止
+        <view class="info text-sm text-gray">
+          将于{{common.myDate(item.deadline,1)}}截止
         </view>
       </view>
       <view class="rowPic">

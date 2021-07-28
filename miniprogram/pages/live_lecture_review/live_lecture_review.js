@@ -11,6 +11,7 @@ Page({
   },
 
   play_introduce(){
+    wx.showLoading()
     wx.cloud.callFunction({
       name:"get_live_lecture_review"
     }).then(res=>{
@@ -18,6 +19,7 @@ Page({
       this.setData({
         live_lecture_review_info: res.result.data
       })
+      wx.hideLoading()
     })
   },
 

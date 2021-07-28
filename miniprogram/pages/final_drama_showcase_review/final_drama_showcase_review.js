@@ -20,6 +20,7 @@ Page({
   },
 
   play_introduce(){
+    wx.showLoading()
     wx.cloud.callFunction({
       name:"get_final_drama_showcase_review"
     }).then(res=>{
@@ -27,6 +28,7 @@ Page({
       this.setData({
         final_drama_showcase_review_info: res.result.data
       })
+      wx.hideLoading()
     })
   },
 

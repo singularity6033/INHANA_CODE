@@ -14,6 +14,7 @@ Component({
   
   methods: {
     getNews(Class=""){
+      wx.showLoading()
       wx.cloud.callFunction({
         name: "get_news",
         data: {Class}
@@ -22,6 +23,7 @@ Component({
         this.setData({
           newsList: res.result.data
         })
+        wx.hideLoading()
       })
     },
   

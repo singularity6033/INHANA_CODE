@@ -7,10 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    TabTitle:["词汇拓展","阅读表演","演讲写作","口语对话"],
-    TabTitle_En:["Vocabulary Exploration","Reading Performance","Writing Speech","Dialogue Practice"],
-    TabCur: 0,
-    scrollLeft:0,
+   
   },
 
   backToHome(){
@@ -22,23 +19,7 @@ Page({
     }, 100)
   },
 
-  tabSelect(e) {
-    if(e.currentTarget.dataset.id==0){
-      this.getNewsData()
-    }else if(e.currentTarget.dataset.id==1){
-      this.getNewsData('阅读表演')
-    }else if(e.currentTarget.dataset.id==2){
-      this.getNewsData('演讲写作')
-    }else if(e.currentTarget.dataset.id==3){
-      this.getNewsData('口语对话')
-    }
-    this.setData({
-      TabCur: e.currentTarget.dataset.id,
-      scrollLeft: (e.currentTarget.dataset.id-1)*60
-    })
-  },
-
-  getNewsData(Class="词汇拓展"){
+  getNewsData(Class){
     wx.showLoading()
     wx.cloud.callFunction({
       name: "get_live_lecture_info",
@@ -104,7 +85,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getNewsData();
+    var grading_train_class = wx.getStorageSync('grading_train_class')
+    this.getNewsData(grading_train_class);
   },
 
   /**

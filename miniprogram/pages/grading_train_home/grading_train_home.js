@@ -4,7 +4,7 @@ var Openid= ''
 Page({
 
   data: {
-    TabTitle: ["公共演讲","诗歌散文朗诵","戏剧独白表演","阅读表演"],
+    TabTitle: ["诗歌散文朗诵","公共演讲","诗歌散文朗诵","戏剧独白表演","阅读表演"],
     TabTitle_En: ["Public Speaking","Speaking Verse and Prose","Acting(Solo)","Reading for Performance"],
     TabCur: 0,
     scrollLeft: 0,
@@ -83,9 +83,9 @@ Page({
     if(app.globalData.userInfo){
       var index = e.currentTarget.dataset.index;
       console.log(index)
-      wx.setStorageSync('index_name', this.data.gradingTrainingLecture[index].title)
+      wx.setStorageSync('grading_train_class', this.data.gradingTrainingLecture[index].title)
       wx.navigateTo({
-        url: '../grading_train_content/grading_train_content'
+        url: '../grading_train/grading_train'
       })
     }else{
       this.setData({
@@ -106,7 +106,7 @@ Page({
     }
   },
 
-  getGrading(Class="公共演讲"){
+  getGrading(Class="诗歌散文朗诵"){
     wx.showLoading()
     wx.cloud.callFunction({
       name: "get_grading_training_lecture",
@@ -119,7 +119,7 @@ Page({
     })
   },
 
-  getGradingData(Class="公共演讲"){
+  getGradingData(Class="诗歌散文朗诵"){
     wx.showLoading()
     wx.cloud.callFunction({
       name: "get_grading_training_lecture_info",

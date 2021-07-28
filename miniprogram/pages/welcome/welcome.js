@@ -1,4 +1,4 @@
-const app=getApp();
+const app = getApp();
 const tmplId = 'swn5payd67W7ngcC_xCqBsxdKK_ntSeZ64Qq2jlKgnY' //这是订阅消息模板id，需自行申请
 Page({
   data: {
@@ -10,11 +10,11 @@ Page({
     tmplIds: [tmplId],
       success (res) {
         console.log(res)
+        wx.showLoading()
         wx.cloud.callFunction({
           name:"get_admin"
         }).then(res=>{
           if(res.result == 1){
-            
             wx.setStorageSync('PageCur', 'RegisterInfo')
             wx.reLaunch({
               url: '../admin_page/admin_page',
@@ -25,6 +25,7 @@ Page({
               url: '../student_page/student_page',
             })
           }
+          wx.hideLoading()
         })
       },
       fail(err){

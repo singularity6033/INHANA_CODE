@@ -16,7 +16,7 @@
 }
 
 .text_bar{
-  margin-left: 260rpx;
+  margin-left: 180rpx;
 }
 
 .tabbar_style{

@@ -27,6 +27,7 @@ Page({
 
   getVideoList(){
     var index_name = wx.getStorageSync('index_name')
+    wx.showLoading()
     wx.cloud.callFunction({
       name:"get_lecture_detail",
       data: {index_name}
@@ -34,6 +35,7 @@ Page({
       this.setData({
         VideoList: res.result.data
       })
+      wx.hideLoading()
     })
   },
 

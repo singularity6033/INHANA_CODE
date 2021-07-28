@@ -20,6 +20,7 @@ Page({
   },
 
   play_introduce(){
+    wx.showLoading()
     wx.cloud.callFunction({
       name:"get_student_showcase_review"
     }).then(res=>{
@@ -27,6 +28,7 @@ Page({
       this.setData({
         student_showcase_info: res.result.data
       })
+      wx.hideLoading()
     })
   },
 

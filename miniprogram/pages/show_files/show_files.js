@@ -28,6 +28,7 @@ Page({
   },
 
   getFilesList(){
+    wx.showLoading()
     wx.cloud.callFunction({
       name:"get_files",
       data: {index_name}
@@ -44,6 +45,7 @@ Page({
           FilesList: filesList[0].pic_url_list
         })
       }
+      wx.hideLoading()
     })
   },
 
