@@ -37,17 +37,17 @@
     </view>
 
     <view class="cu-item">
-      <navigator url='../grading_index/grading_index'>
+      <view bindtap="NavigatorToGrading">
         <view class="cuIcon-global text-red"></view>
         <text class="text-df test-black text-bold">LAMDA考级</text>
-      </navigator>
+      </view>
     </view>
 
     <view class="cu-item">
-      <navigator url='../live_lecture_review/live_lecture_review'>
+      <view bindtap="NavigatorToLiveReview">
         <view class="cuIcon-footprint text-red"></view>
         <text class="text-df text-bold">公益直播课</text>
-      </navigator>
+      </view>
     </view>
  
     <view class="cu-item">

@@ -30,18 +30,25 @@ Component({
     },
 
     showModal(e) {
-      this.setData({
-        modalName: e.currentTarget.dataset.target,
-        list_name:['学习内容','知识分享']
-      })
+      if(app.globalData.userInfo){
+        this.setData({
+          modalName: e.currentTarget.dataset.target,
+          list_name:['学习内容','知识分享']
+        })
+      }else{
+        wx.showToast({
+          title: '请先登录',
+          icon:'error',
+          duration: 1500
+        })
+        wx.setStorageSync('PageCur', 'User')
+        setTimeout(() => {
+          wx.navigateTo({
+            url: '../student_page/student_page',
+          })
+        }, 1500);
+      }
     },
-
-    // showModal1(){
-    //   this.setData({
-    //     modalName: 'DrawerModalL',
-    //     list_name:['资讯链接','视频列表']
-    //   })
-    // },
 
     showModal2(){
       this.setData({
@@ -54,6 +61,46 @@ Component({
       this.setData({
         modalName: null
       })
+    },
+
+    NavigatorToGrading(){
+      if(app.globalData.userInfo){
+        wx.navigateTo({
+          url: '../grading_index/grading_index',
+        })
+      }else{
+        wx.showToast({
+          title: '请先登录',
+          icon:'error',
+          duration: 1500
+        })
+        wx.setStorageSync('PageCur', 'User')
+        setTimeout(() => {
+          wx.navigateTo({
+            url: '../student_page/student_page',
+          })
+        }, 1500);
+      }
+    },
+
+    NavigatorToLiveReview(){
+      if(app.globalData.userInfo){
+        wx.navigateTo({
+          url: '../live_lecture_review/live_lecture_review',
+        })
+      }else{
+        wx.showToast({
+          title: '请先登录',
+          icon:'error',
+          duration: 1500
+        })
+        wx.setStorageSync('PageCur', 'User')
+        setTimeout(() => {
+          wx.navigateTo({
+            url: '../student_page/student_page',
+          })
+        }, 1500);
+      }
     },
 
     switchTo(e){

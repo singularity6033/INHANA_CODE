@@ -58,6 +58,7 @@ Page({
     if(app.globalData.userInfo){
       FormData = e.detail.value
       FormData.exam_session = this.data.SelectedSession
+      console.log(FormData)
       wx.cloud.callFunction({
         name: "get_grading_score",
         data: FormData
