@@ -7,28 +7,7 @@ Page({
    */
   data: {
     newsList: [],
-    TabCur: 0,
-    scrollLeft: 0,
-    category: ['好书推荐系列','儿童诗歌系列','戏剧故事系列','知识大百科系列','英国资讯分享']
   },
-
-  // tabSelect(e) {
-  //   if(e.currentTarget.dataset.id==0){
-  //     this.getNews()
-  //   }else if(e.currentTarget.dataset.id==1){
-  //     this.getNews('儿童诗歌系列')
-  //   }else if(e.currentTarget.dataset.id==2){
-  //     this.getNews('戏剧故事系列')
-  //   }else if(e.currentTarget.dataset.id==3){
-  //     this.getNews('知识大百科系列')
-  //   }else if(e.currentTarget.dataset.id==4){
-  //     this.getNews('英国资讯分享')
-  //   }
-  //   this.setData({
-  //     TabCur: e.currentTarget.dataset.id,
-  //     scrollLeft: (e.currentTarget.dataset.id-1)*60
-  //   })
-  // },
 
   getNews(Class="好书推荐系列"){
     wx.showLoading()

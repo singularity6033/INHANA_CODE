@@ -112,7 +112,13 @@ Component({
         return;
       }else if(e.currentTarget.dataset.item=='好书推荐系列'){
         url = '../news/news'
-      }else{
+      }else if(e.currentTarget.dataset.item=='知识大百科系列'){
+        wx.setStorageSync('learning_resources_type', '知识大百科系列')
+        wx.navigateTo({
+          url: '../video_resources/video_resources',
+        })
+      }
+      else{
         wx.setStorageSync('index_name', e.currentTarget.dataset.item)
         console.log(e.currentTarget.dataset.item)
         url = '../video_list/video_list'

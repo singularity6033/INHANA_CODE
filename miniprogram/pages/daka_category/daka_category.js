@@ -7,8 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    TabTitle:["词汇拓展","阅读表演","演讲写作","口语对话"],
-    TabTitle_En:["Vocabulary Exploration","Reading Performance","Writing Speech","Dialogue Practice"],
+    TabTitle:["诗歌朗诵","阅读表演","戏剧学习","口语对话"],
+    TabTitle_En:["Verse Speaking","Reading Performance","Learning Drama","Dialogue Practice"],
     TabCur: 0,
     scrollLeft:0,
   },
