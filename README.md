@@ -1,5 +1,5 @@
 # inhana
-- this is the open source for inhana wechat mini program.
+- this is the open source code for inhana wechat mini program.
 - inhana is mainly based on framework mina and wechat mini program cloud base.
 - below is our mini program QR code.
  
